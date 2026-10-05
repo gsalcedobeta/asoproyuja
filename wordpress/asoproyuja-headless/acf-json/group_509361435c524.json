@@ -1,0 +1,145 @@
+{
+  "key": "group_509361435c524",
+  "title": "Página: Política de datos",
+  "fields": [
+    {
+      "label": "Encabezado",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_11bae255005f8"
+    },
+    {
+      "label": "Encabezado de la página (franja verde)",
+      "name": "hero",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_4bb06420dd210"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_92a0b2ba91a5f"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_cbb480cd18d3a"
+        }
+      ],
+      "key": "field_da7ac37233920"
+    },
+    {
+      "label": "Contenido",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_a169fbfd9debe"
+    },
+    {
+      "label": "Última actualización",
+      "name": "actualizado",
+      "type": "date_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "display_format": "d/m/Y",
+      "return_format": "Y-m-d",
+      "first_day": 1,
+      "key": "field_20eabd044621e"
+    },
+    {
+      "label": "Texto de la política",
+      "name": "contenido",
+      "type": "wysiwyg",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 1,
+      "delay": 0,
+      "key": "field_66818dd98715b"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "asoproyuja-politica-datos"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "slug",
+    "author",
+    "format",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "",
+  "show_in_rest": 1
+}

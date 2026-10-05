@@ -1,0 +1,281 @@
+{
+  "key": "group_38b234d3faa9a",
+  "title": "Ajustes del sitio",
+  "fields": [
+    {
+      "label": "Contacto",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_f0bedab34a7bb"
+    },
+    {
+      "label": "Dirección",
+      "name": "direccion",
+      "type": "textarea",
+      "instructions": "Cada línea se muestra en un renglón (pie de página y Contacto).",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 2,
+      "new_lines": "",
+      "key": "field_6611e0f44f471"
+    },
+    {
+      "label": "Teléfono fijo",
+      "name": "telefono_fijo",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_9f6272423e252"
+    },
+    {
+      "label": "Celular",
+      "name": "celular",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_083c2af157103"
+    },
+    {
+      "label": "Sitio web (texto del pie)",
+      "name": "sitio_web",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "34",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_45b7219fc0da5"
+    },
+    {
+      "label": "Correo de contacto (público)",
+      "name": "correo",
+      "type": "text",
+      "instructions": "Se muestra en Contacto y en el pie. Vacío = no se muestra.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_8b1778c23b333"
+    },
+    {
+      "label": "Correo que recibe los mensajes del formulario",
+      "name": "correo_notificaciones",
+      "type": "text",
+      "instructions": "No se publica. Si se deja vacío se usa el correo de contacto o, en su defecto, el del administrador.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_3b411c0b0e8d8"
+    },
+    {
+      "label": "Horario de atención",
+      "name": "horario",
+      "type": "textarea",
+      "instructions": "Vacío = no se muestra.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 2,
+      "new_lines": "",
+      "key": "field_199f297657b05"
+    },
+    {
+      "label": "URL del mapa (Google Maps → Compartir → Insertar un mapa → copiar solo el src)",
+      "name": "mapa_url",
+      "type": "text",
+      "instructions": "Vacío = la página de Contacto no muestra mapa.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_8c7670ad099d5"
+    },
+    {
+      "label": "Redes y pie",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_0f6674657080c"
+    },
+    {
+      "label": "YouTube (URL)",
+      "name": "youtube",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_cdabc12f10804"
+    },
+    {
+      "label": "Facebook (URL)",
+      "name": "facebook",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_dd114e01d4c72"
+    },
+    {
+      "label": "Instagram (URL)",
+      "name": "instagram",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "34",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_cd96db009e599"
+    },
+    {
+      "label": "Descripción bajo el logo (pie)",
+      "name": "descripcion_pie",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 2,
+      "new_lines": "",
+      "key": "field_43380d2adec8b"
+    },
+    {
+      "label": "Texto de copyright",
+      "name": "texto_copyright",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_d1843d5891271"
+    },
+    {
+      "label": "Créditos (texto)",
+      "name": "texto_creditos",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_fa0b1c8c8697a"
+    },
+    {
+      "label": "Créditos (enlace)",
+      "name": "creditos_enlace",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "key": "field_677cea8ce6fab"
+    },
+    {
+      "label": "Botón flotante «Donar ahora»",
+      "name": "boton_flotante",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "key": "field_42efaa42c4502"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "ajustes-del-sitio"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "slug",
+    "author",
+    "format",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "",
+  "show_in_rest": 1
+}

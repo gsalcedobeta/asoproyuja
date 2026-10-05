@@ -1,0 +1,575 @@
+{
+  "key": "group_b6160da287e4b",
+  "title": "Página: Cómo ayudar",
+  "fields": [
+    {
+      "label": "Encabezado",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_4f45aa26900f2"
+    },
+    {
+      "label": "Encabezado de la página (franja verde)",
+      "name": "hero",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_884f7be3f254e"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_5b3bf841d3d8f"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_bd5e0314dc7c5"
+        }
+      ],
+      "key": "field_52d535782d973"
+    },
+    {
+      "label": "Muy pronto",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_dbb7db1265f57"
+    },
+    {
+      "label": "Bloque «Muy pronto»",
+      "name": "proximamente",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_529e04dbc50ed"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_c03b35aa9eee5"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 3,
+          "new_lines": "",
+          "key": "field_b3ea3b3c2d565"
+        },
+        {
+          "label": "Botón",
+          "name": "boton",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_203024cf2888c"
+        },
+        {
+          "label": "Imagen (mascota)",
+          "name": "imagen",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url",
+          "preview_size": "medium",
+          "library": "all",
+          "key": "field_26c9e29583f96"
+        }
+      ],
+      "key": "field_e460d01e45433"
+    },
+    {
+      "label": "Formas de ayudar",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_21b437c8faf0d"
+    },
+    {
+      "label": "Introducción",
+      "name": "intro",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_90a4085f81f37"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_eeb5abc46d4a4"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_7a74604a6c23e"
+        }
+      ],
+      "key": "field_ee526f78f16af"
+    },
+    {
+      "label": "Formas de ayudar",
+      "name": "formas",
+      "type": "repeater",
+      "instructions": "Mientras no haya formas de ayudar ni datos para donar, la página muestra el bloque «Muy pronto».",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "button_label": "Agregar forma de ayudar",
+      "min": 0,
+      "max": 0,
+      "sub_fields": [
+        {
+          "label": "Icono",
+          "name": "icono",
+          "type": "select",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "34",
+            "class": "",
+            "id": ""
+          },
+          "choices": {
+            "mensaje": "Mensaje",
+            "pregunta": "Pregunta",
+            "corazon": "Corazon",
+            "ubicacion": "Ubicacion",
+            "telefono": "Telefono",
+            "celular": "Celular",
+            "correo": "Correo",
+            "reloj": "Reloj",
+            "web": "Web",
+            "hoja": "Hoja",
+            "construccion": "Construccion",
+            "libro": "Libro",
+            "salud": "Salud",
+            "personas": "Personas",
+            "ninez": "Ninez",
+            "alimentos": "Alimentos",
+            "colaboracion": "Colaboracion",
+            "integridad": "Integridad",
+            "creatividad": "Creatividad",
+            "voluntariado": "Voluntariado",
+            "alianza": "Alianza",
+            "donacion": "Donacion",
+            "documento": "Documento"
+          },
+          "return_format": "value",
+          "ui": 1,
+          "allow_null": 0,
+          "multiple": 0,
+          "default_value": "corazon",
+          "key": "field_6beaad815d05b"
+        },
+        {
+          "label": "Color del icono",
+          "name": "color",
+          "type": "select",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "choices": {
+            "verde": "Verde",
+            "amarillo": "Amarillo (icono terracota)"
+          },
+          "return_format": "value",
+          "ui": 1,
+          "allow_null": 0,
+          "multiple": 0,
+          "default_value": "verde",
+          "key": "field_9ce2e2e336289"
+        },
+        {
+          "label": "Enlace (opcional)",
+          "name": "enlace",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_d7dc9fa3a5082"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_d0be92c26bff8"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_838eb8413f596"
+        }
+      ],
+      "key": "field_c8aa1bb75b0db"
+    },
+    {
+      "label": "Donaciones",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_7857482d42b6a"
+    },
+    {
+      "label": "Datos para donar",
+      "name": "donaciones",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_a6b0a49cceb81"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_8f6fb063fed70"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_eca44b008b2a7"
+        },
+        {
+          "label": "Contenido (cuentas, Nequi, etc.)",
+          "name": "contenido",
+          "type": "wysiwyg",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 1,
+          "delay": 0,
+          "key": "field_741a5cabf0f05"
+        }
+      ],
+      "key": "field_f327fbe48887a"
+    },
+    {
+      "label": "Llamado a la acción",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_67b9860d5decc"
+    },
+    {
+      "label": "Llamado a la acción (panel naranja)",
+      "name": "cta",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_c4c9a1b02149b"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_fda2465e52c65"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_2ceb0779bf76f"
+        },
+        {
+          "label": "Botón",
+          "name": "boton",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_55f61f143dbe2"
+        }
+      ],
+      "key": "field_7f4673944fca7"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "asoproyuja-como-ayudar"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "slug",
+    "author",
+    "format",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "",
+  "show_in_rest": 1
+}

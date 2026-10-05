@@ -1,0 +1,225 @@
+{
+  "key": "group_c0b4dd34c1d4b",
+  "title": "Página: Noticias",
+  "fields": [
+    {
+      "label": "Encabezado",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_7f716f382c42d"
+    },
+    {
+      "label": "Encabezado de la página (franja verde)",
+      "name": "hero",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_67639b65317c8"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_e7244985dd8d2"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_256e34cf028c2"
+        }
+      ],
+      "key": "field_b6e0e69a083fe"
+    },
+    {
+      "label": "Listado",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_969de39d4693d"
+    },
+    {
+      "label": "Noticias por página",
+      "name": "por_pagina",
+      "type": "number",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 9,
+      "min": 3,
+      "max": 30,
+      "key": "field_b07cb0d85f5c4"
+    },
+    {
+      "label": "Mensaje cuando no hay noticias",
+      "name": "mensaje_vacio",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "key": "field_95a5f638bb907"
+    },
+    {
+      "label": "Llamado a la acción",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_9b2117efe861c"
+    },
+    {
+      "label": "Llamado a la acción (panel naranja)",
+      "name": "cta",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_8c2e108423029"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_9fb6b600f1a9c"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_4fc8f1ea64662"
+        },
+        {
+          "label": "Botón",
+          "name": "boton",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_3adc27df1ce21"
+        }
+      ],
+      "key": "field_23644213d6ad6"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "asoproyuja-noticias"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "slug",
+    "author",
+    "format",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Las noticias se crean en el menú Noticias.",
+  "show_in_rest": 1
+}

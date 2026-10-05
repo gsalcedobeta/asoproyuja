@@ -1,0 +1,1016 @@
+{
+  "key": "group_4396fbc6e3a2f",
+  "title": "Página: Quiénes somos",
+  "fields": [
+    {
+      "label": "Encabezado",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_663076a7c86fe"
+    },
+    {
+      "label": "Encabezado de la página (franja verde)",
+      "name": "hero",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_883736966bc51"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_a9c3d1c58a949"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_47ac93f78ae39"
+        }
+      ],
+      "key": "field_705a69286a865"
+    },
+    {
+      "label": "Quiénes somos",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_68422d14b29e1"
+    },
+    {
+      "label": "Quiénes somos",
+      "name": "identidad",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Imagen",
+          "name": "imagen",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url",
+          "preview_size": "medium",
+          "library": "all",
+          "key": "field_bfa28e3cfc269"
+        },
+        {
+          "label": "Texto alternativo",
+          "name": "imagen_alt",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_c9b52a93e63aa"
+        },
+        {
+          "label": "Sello: número",
+          "name": "sello_numero",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_085a0e6bcc0e4"
+        },
+        {
+          "label": "Sello: texto",
+          "name": "sello_texto",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_e226888ceb745"
+        },
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_39e2161ed4aea"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_de95b060ae24d"
+        },
+        {
+          "label": "Contenido",
+          "name": "contenido",
+          "type": "wysiwyg",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 1,
+          "delay": 0,
+          "key": "field_d46a601ac3b75"
+        }
+      ],
+      "key": "field_8dc3112bef3af"
+    },
+    {
+      "label": "Misión y visión",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_e2a2cc862115d"
+    },
+    {
+      "label": "Misión y visión",
+      "name": "mision_vision",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_289e33081c31a"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_614e6debb4aa4"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_1668ab20ed01e"
+        },
+        {
+          "label": "Misión",
+          "name": "mision",
+          "type": "wysiwyg",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 1,
+          "delay": 0,
+          "key": "field_4c774c2113683"
+        },
+        {
+          "label": "Visión",
+          "name": "vision",
+          "type": "wysiwyg",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 1,
+          "delay": 0,
+          "key": "field_89a9e69639209"
+        }
+      ],
+      "key": "field_54e27693f8a30"
+    },
+    {
+      "label": "Líneas de acción",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_488952f549d73"
+    },
+    {
+      "label": "Líneas de acción",
+      "name": "lineas",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_30a7baf358714"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_38039ed66e09e"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_ca39aad2b19a1"
+        },
+        {
+          "label": "Líneas",
+          "name": "items",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "button_label": "Agregar línea",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Icono",
+              "name": "icono",
+              "type": "select",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+              },
+              "choices": {
+                "mensaje": "Mensaje",
+                "pregunta": "Pregunta",
+                "corazon": "Corazon",
+                "ubicacion": "Ubicacion",
+                "telefono": "Telefono",
+                "celular": "Celular",
+                "correo": "Correo",
+                "reloj": "Reloj",
+                "web": "Web",
+                "hoja": "Hoja",
+                "construccion": "Construccion",
+                "libro": "Libro",
+                "salud": "Salud",
+                "personas": "Personas",
+                "ninez": "Ninez",
+                "alimentos": "Alimentos",
+                "colaboracion": "Colaboracion",
+                "integridad": "Integridad",
+                "creatividad": "Creatividad",
+                "voluntariado": "Voluntariado",
+                "alianza": "Alianza",
+                "donacion": "Donacion",
+                "documento": "Documento"
+              },
+              "return_format": "value",
+              "ui": 1,
+              "allow_null": 0,
+              "multiple": 0,
+              "default_value": "corazon",
+              "key": "field_d4e7a1dcb5a93"
+            },
+            {
+              "label": "Color del icono",
+              "name": "color",
+              "type": "select",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "choices": {
+                "verde": "Verde",
+                "amarillo": "Amarillo (icono terracota)"
+              },
+              "return_format": "value",
+              "ui": 1,
+              "allow_null": 0,
+              "multiple": 0,
+              "default_value": "verde",
+              "key": "field_cab6e3ba750af"
+            },
+            {
+              "label": "Título",
+              "name": "titulo",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_3658d87a99560"
+            },
+            {
+              "label": "Ítems",
+              "name": "items",
+              "type": "repeater",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "layout": "table",
+              "button_label": "Agregar ítem",
+              "min": 0,
+              "max": 0,
+              "sub_fields": [
+                {
+                  "label": "Texto",
+                  "name": "texto",
+                  "type": "text",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "key": "field_2b304da2c61c8"
+                }
+              ],
+              "key": "field_c0e6be2231bb9"
+            }
+          ],
+          "key": "field_5b1a27dac7318"
+        }
+      ],
+      "key": "field_c9c94eb5afd39"
+    },
+    {
+      "label": "Valores",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_45abddd343a49"
+    },
+    {
+      "label": "Valores",
+      "name": "valores",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_76f900f02574f"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_5c65c5eed7f48"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_9783ef1f362f2"
+        },
+        {
+          "label": "Valores",
+          "name": "items",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "button_label": "Agregar valor",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Icono",
+              "name": "icono",
+              "type": "select",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+              },
+              "choices": {
+                "mensaje": "Mensaje",
+                "pregunta": "Pregunta",
+                "corazon": "Corazon",
+                "ubicacion": "Ubicacion",
+                "telefono": "Telefono",
+                "celular": "Celular",
+                "correo": "Correo",
+                "reloj": "Reloj",
+                "web": "Web",
+                "hoja": "Hoja",
+                "construccion": "Construccion",
+                "libro": "Libro",
+                "salud": "Salud",
+                "personas": "Personas",
+                "ninez": "Ninez",
+                "alimentos": "Alimentos",
+                "colaboracion": "Colaboracion",
+                "integridad": "Integridad",
+                "creatividad": "Creatividad",
+                "voluntariado": "Voluntariado",
+                "alianza": "Alianza",
+                "donacion": "Donacion",
+                "documento": "Documento"
+              },
+              "return_format": "value",
+              "ui": 1,
+              "allow_null": 0,
+              "multiple": 0,
+              "default_value": "corazon",
+              "key": "field_1ce51b092b627"
+            },
+            {
+              "label": "Color del icono",
+              "name": "color",
+              "type": "select",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "choices": {
+                "verde": "Verde",
+                "amarillo": "Amarillo (icono terracota)"
+              },
+              "return_format": "value",
+              "ui": 1,
+              "allow_null": 0,
+              "multiple": 0,
+              "default_value": "verde",
+              "key": "field_db42cda220b48"
+            },
+            {
+              "label": "Título",
+              "name": "titulo",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_9a0d9f57a9fad"
+            },
+            {
+              "label": "Texto",
+              "name": "texto",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "rows": 2,
+              "new_lines": "",
+              "key": "field_52e947084b3e6"
+            }
+          ],
+          "key": "field_0851016e539d1"
+        }
+      ],
+      "key": "field_d63068d6b6112"
+    },
+    {
+      "label": "Organigrama",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_f69f29f6a611e"
+    },
+    {
+      "label": "Organigrama",
+      "name": "organigrama",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_bbf80d2fd2eeb"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_ee24a4b23cfff"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_d2ef44f2ef099"
+        },
+        {
+          "label": "Niveles superiores (de arriba hacia abajo)",
+          "name": "niveles",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "table",
+          "button_label": "Agregar nivel",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Texto",
+              "name": "texto",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_7d7674680fa06"
+            }
+          ],
+          "key": "field_22f0d591ce856"
+        },
+        {
+          "label": "Direcciones",
+          "name": "direcciones",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "button_label": "Agregar dirección",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Nombre de la dirección",
+              "name": "titulo",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_87379754b5707"
+            },
+            {
+              "label": "Áreas",
+              "name": "areas",
+              "type": "repeater",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "layout": "block",
+              "button_label": "Agregar área",
+              "min": 0,
+              "max": 0,
+              "sub_fields": [
+                {
+                  "label": "Título del área (opcional)",
+                  "name": "titulo",
+                  "type": "text",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "key": "field_5310e6e604b57"
+                },
+                {
+                  "label": "Cargos",
+                  "name": "cargos",
+                  "type": "repeater",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "layout": "table",
+                  "button_label": "Agregar cargo",
+                  "min": 0,
+                  "max": 0,
+                  "sub_fields": [
+                    {
+                      "label": "Texto",
+                      "name": "texto",
+                      "type": "text",
+                      "instructions": "",
+                      "required": 0,
+                      "conditional_logic": 0,
+                      "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                      },
+                      "key": "field_38a5d9a230f3e"
+                    }
+                  ],
+                  "key": "field_f172d8cae64bd"
+                }
+              ],
+              "key": "field_24cf4cc20c2e1"
+            }
+          ],
+          "key": "field_8706e46a5649a"
+        }
+      ],
+      "key": "field_7300cd33e3676"
+    },
+    {
+      "label": "Llamado a la acción",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_4768cd9c43952"
+    },
+    {
+      "label": "Llamado a la acción (panel naranja)",
+      "name": "cta",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_9d97830379271"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_0fef7ef9499a4"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_57bc6c21bbfa3"
+        },
+        {
+          "label": "Botón",
+          "name": "boton",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_d134e88b17da3"
+        }
+      ],
+      "key": "field_22d8c3fece568"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "asoproyuja-quienes-somos"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "slug",
+    "author",
+    "format",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "",
+  "show_in_rest": 1
+}

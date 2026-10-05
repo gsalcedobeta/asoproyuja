@@ -1,0 +1,40 @@
+{
+  "key": "group_d449581e7fcff",
+  "title": "Noticia",
+  "fields": [
+    {
+      "label": "Resumen de la tarjeta",
+      "name": "extracto",
+      "type": "textarea",
+      "instructions": "Texto corto bajo el título en las tarjetas de noticias.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 2,
+      "new_lines": "",
+      "key": "field_9bb4ae5a3f0ea"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "noticia"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [],
+  "active": true,
+  "description": "La foto es la «Imagen destacada» y el cuerpo se escribe en el editor.",
+  "show_in_rest": 1
+}

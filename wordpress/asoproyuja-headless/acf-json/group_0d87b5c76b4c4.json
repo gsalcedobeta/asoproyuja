@@ -1,0 +1,343 @@
+{
+  "key": "group_0d87b5c76b4c4",
+  "title": "Página: Contacto (atención al ciudadano)",
+  "fields": [
+    {
+      "label": "Encabezado",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_fbd38474fe796"
+    },
+    {
+      "label": "Encabezado de la página (franja verde)",
+      "name": "hero",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_82800d6fbd9cd"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_9f366fad2fe97"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_3c9f323eeb7de"
+        }
+      ],
+      "key": "field_8c19e277c2d72"
+    },
+    {
+      "label": "Canales de atención",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_160482cf63668"
+    },
+    {
+      "label": "Canales de atención",
+      "name": "canales",
+      "type": "group",
+      "instructions": "Dirección, teléfonos, correo, horario y redes se editan en Ajustes del sitio.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_936c16ab2d38f"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_f6a95ac8c9c4e"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_40036a271679b"
+        }
+      ],
+      "key": "field_bfb128b3e0f9e"
+    },
+    {
+      "label": "Formulario",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_a0519f9e87b59"
+    },
+    {
+      "label": "Formulario",
+      "name": "formulario",
+      "type": "group",
+      "instructions": "Los mensajes llegan al menú Mensajes y al correo configurado en Ajustes del sitio.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_6dada08e72c8c"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_058ed020884e4"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_db0785f193c24"
+        },
+        {
+          "label": "Opciones de «Asunto»",
+          "name": "asuntos",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "table",
+          "button_label": "Agregar opción",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Texto",
+              "name": "texto",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_e1fc51a581e24"
+            }
+          ],
+          "key": "field_3af5573d31243"
+        }
+      ],
+      "key": "field_73fb236b89d99"
+    },
+    {
+      "label": "Mapa",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_a5796490cdd3d"
+    },
+    {
+      "label": "Mapa",
+      "name": "mapa",
+      "type": "group",
+      "instructions": "La URL del mapa se configura en Ajustes del sitio.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_a8fb1a5bbe77d"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_2017a19768626"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_767da3e5d25d1"
+        }
+      ],
+      "key": "field_0c4c6cdb3846c"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "asoproyuja-contacto"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "slug",
+    "author",
+    "format",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "",
+  "show_in_rest": 1
+}

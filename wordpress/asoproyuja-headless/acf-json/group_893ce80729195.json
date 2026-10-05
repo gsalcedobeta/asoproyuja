@@ -1,0 +1,949 @@
+{
+  "key": "group_893ce80729195",
+  "title": "Página: Inicio",
+  "fields": [
+    {
+      "label": "1. Slider",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_ae8ae8cf81b33"
+    },
+    {
+      "label": "Diapositivas",
+      "name": "slides",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "button_label": "Agregar diapositiva",
+      "min": 0,
+      "max": 0,
+      "sub_fields": [
+        {
+          "label": "Antetítulo (amarillo)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_69763d57b10bb"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "Si pasa de 55 caracteres se muestra un poco más pequeño.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_57b0255a5ba41"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_8998b18a2e618"
+        },
+        {
+          "label": "Foto (horizontal 4:3)",
+          "name": "imagen",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url",
+          "preview_size": "medium",
+          "library": "all",
+          "key": "field_8c664cb2f8ac2"
+        },
+        {
+          "label": "Texto alternativo de la foto",
+          "name": "imagen_alt",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_317f9b3c7b15e"
+        },
+        {
+          "label": "Botones",
+          "name": "botones",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "table",
+          "button_label": "Agregar botón",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Botón",
+              "name": "boton",
+              "type": "link",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+              },
+              "return_format": "array",
+              "key": "field_d65a58ffc09fb"
+            },
+            {
+              "label": "Estilo",
+              "name": "estilo",
+              "type": "select",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+              },
+              "choices": {
+                "primario": "Naranja",
+                "contorno": "Contorno blanco"
+              },
+              "return_format": "value",
+              "ui": 1,
+              "allow_null": 0,
+              "multiple": 0,
+              "key": "field_b04d1d5395f3c"
+            }
+          ],
+          "key": "field_00040dde0c37e"
+        }
+      ],
+      "key": "field_d4a0e8fee1a1e"
+    },
+    {
+      "label": "2. Bienvenida",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_4c127f504375d"
+    },
+    {
+      "label": "Bienvenida",
+      "name": "bienvenida",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Imagen",
+          "name": "imagen",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url",
+          "preview_size": "medium",
+          "library": "all",
+          "key": "field_630591139f7f9"
+        },
+        {
+          "label": "Texto alternativo",
+          "name": "imagen_alt",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_204b53b0ac3cd"
+        },
+        {
+          "label": "Sello: número",
+          "name": "sello_numero",
+          "type": "text",
+          "instructions": "Ej.: + de 28 años",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_f1e9f5aec1248"
+        },
+        {
+          "label": "Sello: texto",
+          "name": "sello_texto",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_1610060cb73bf"
+        },
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_0657efdde163c"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_c3f1bd778da20"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 3,
+          "new_lines": "",
+          "key": "field_dcdedfe8e6612"
+        },
+        {
+          "label": "Botón",
+          "name": "boton",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_ae2e70fc869f0"
+        }
+      ],
+      "key": "field_16473549da08a"
+    },
+    {
+      "label": "3. Accesos rápidos",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_b73e3279262e7"
+    },
+    {
+      "label": "Accesos rápidos (tarjetas)",
+      "name": "accesos",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "button_label": "Agregar acceso",
+      "min": 0,
+      "max": 0,
+      "sub_fields": [
+        {
+          "label": "Icono",
+          "name": "icono",
+          "type": "select",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "34",
+            "class": "",
+            "id": ""
+          },
+          "choices": {
+            "mensaje": "Mensaje",
+            "pregunta": "Pregunta",
+            "corazon": "Corazon",
+            "ubicacion": "Ubicacion",
+            "telefono": "Telefono",
+            "celular": "Celular",
+            "correo": "Correo",
+            "reloj": "Reloj",
+            "web": "Web",
+            "hoja": "Hoja",
+            "construccion": "Construccion",
+            "libro": "Libro",
+            "salud": "Salud",
+            "personas": "Personas",
+            "ninez": "Ninez",
+            "alimentos": "Alimentos",
+            "colaboracion": "Colaboracion",
+            "integridad": "Integridad",
+            "creatividad": "Creatividad",
+            "voluntariado": "Voluntariado",
+            "alianza": "Alianza",
+            "donacion": "Donacion",
+            "documento": "Documento"
+          },
+          "return_format": "value",
+          "ui": 1,
+          "allow_null": 0,
+          "multiple": 0,
+          "default_value": "corazon",
+          "key": "field_76c126b6f9aa3"
+        },
+        {
+          "label": "Color del icono",
+          "name": "color",
+          "type": "select",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "choices": {
+            "verde": "Verde",
+            "amarillo": "Amarillo (icono terracota)"
+          },
+          "return_format": "value",
+          "ui": 1,
+          "allow_null": 0,
+          "multiple": 0,
+          "default_value": "verde",
+          "key": "field_8fcebe8418661"
+        },
+        {
+          "label": "Enlace",
+          "name": "enlace",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_21509740a5afe"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "40",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_39c9b1eb27e93"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "60",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_2e6224a0c53a6"
+        }
+      ],
+      "key": "field_5f6819913dcbf"
+    },
+    {
+      "label": "4. Noticias",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_5f6caa076fccd"
+    },
+    {
+      "label": "Noticias",
+      "name": "noticias",
+      "type": "group",
+      "instructions": "Las tarjetas son las noticias más recientes (menú Noticias).",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_ccf590ea6e40a"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_3ae6afc9135c0"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_1893fd25c77b9"
+        },
+        {
+          "label": "Cantidad de noticias a mostrar",
+          "name": "cantidad",
+          "type": "number",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": 3,
+          "min": 1,
+          "max": 9,
+          "key": "field_6f14105ffab49"
+        }
+      ],
+      "key": "field_bbee54ecf8130"
+    },
+    {
+      "label": "5. Aliados",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_bcf93f32c19fb"
+    },
+    {
+      "label": "Aliados",
+      "name": "aliados",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_c52794ef46ce9"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_3b101d0bd820f"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_c71d034510994"
+        },
+        {
+          "label": "Logos",
+          "name": "logos",
+          "type": "repeater",
+          "instructions": "Sin logos, la sección no se muestra.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "table",
+          "button_label": "Agregar logo",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Logo (PNG con fondo transparente)",
+              "name": "logo",
+              "type": "image",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+              },
+              "return_format": "url",
+              "preview_size": "medium",
+              "library": "all",
+              "key": "field_2c3e87e5f878c"
+            },
+            {
+              "label": "Nombre de la organización",
+              "name": "nombre",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_9f4d4c11c9d47"
+            },
+            {
+              "label": "Sitio web (opcional)",
+              "name": "url",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_c5209bc5e71fc"
+            }
+          ],
+          "key": "field_d53e01a4814c4"
+        },
+        {
+          "label": "Frase final",
+          "name": "texto_cta",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "60",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_b154ebafcbaf5"
+        },
+        {
+          "label": "Enlace de la frase",
+          "name": "enlace_cta",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "40",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_c975786df15a1"
+        }
+      ],
+      "key": "field_6680ce5b1afd7"
+    },
+    {
+      "label": "6. Newsletter",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_4092c5c3a7614"
+    },
+    {
+      "label": "Newsletter",
+      "name": "newsletter",
+      "type": "group",
+      "instructions": "Los correos quedan en el menú Suscriptores (exportable a CSV).",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_caa732195679c"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_8f721007c255d"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_7e5026e4aa7a7"
+        },
+        {
+          "label": "Texto de ejemplo del campo",
+          "name": "placeholder",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_55ae527c8d1be"
+        },
+        {
+          "label": "Texto del botón",
+          "name": "boton",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "33",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_290f198f86192"
+        },
+        {
+          "label": "Mensaje al suscribirse",
+          "name": "mensaje_exito",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "34",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_bf1d320f50358"
+        },
+        {
+          "label": "Nota bajo el formulario",
+          "name": "nota",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_8a51ac22ee8ae"
+        }
+      ],
+      "key": "field_aa85a7bff92f5"
+    },
+    {
+      "label": "7. Apóyanos",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_c93680f737289"
+    },
+    {
+      "label": "Apóyanos",
+      "name": "apoyo",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_fdc11dfbd3e05"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_d6ca4e0d50a04"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_9931a77d6d83f"
+        },
+        {
+          "label": "Botón",
+          "name": "boton",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_faa9fc19f00e3"
+        },
+        {
+          "label": "Mascota",
+          "name": "mascota",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url",
+          "preview_size": "medium",
+          "library": "all",
+          "key": "field_fcbc0135474fc"
+        }
+      ],
+      "key": "field_02d2e10405339"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "asoproyuja-inicio"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "slug",
+    "author",
+    "format",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "",
+  "show_in_rest": 1
+}

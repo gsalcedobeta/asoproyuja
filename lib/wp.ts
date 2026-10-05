@@ -11,6 +11,9 @@ export function claveEntorno(nombre: string): string {
 
 export const wpEnabled = WP_URL.length > 0;
 
+/** URL pública del sitio (sin barra final). */
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://asoproyuja.org").trim().replace(/\/+$/, "");
+
 /** Segundos entre regeneraciones automáticas. WordPress además avisa al guardar (ver /api/revalidate). */
 export const REVALIDATE_SECONDS = 600;
 
@@ -83,10 +86,12 @@ export function stripTags(html: string): string {
 }
 
 /**
- * Convierte enlaces absolutos al CMS (cms.asoproyuja.org/contacto/) en rutas
+ * Convierte enlaces absolutos al CMS (cms.asoproyuja.org/contacto/) o al sitio público en rutas
  * del sitio (/contacto). Los archivos de /wp-content/ se dejan intactos.
  */
 export function localizeUrl(url: string): string {
+  // Enlaces al propio sitio público (p. ej. páginas agregadas a un menú) → ruta relativa
+  if (SITE_URL && (url === SITE_URL || url.startsWith(SITE_URL + "/"))) return url.slice(SITE_URL.length).replace(/\/+(?=$|[?#])/, "") || "/";
   if (!wpEnabled || !url.startsWith(WP_URL)) return url;
   const rest = url.slice(WP_URL.length);
   if (rest.startsWith("/wp-content/")) return url;
