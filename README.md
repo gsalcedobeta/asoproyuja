@@ -61,7 +61,7 @@ Puntos clave:
 app/                        Rutas de Next.js (App Router)
   layout.tsx                Documento base: estilos, encabezado, pie y botón flotante "Donar"
   page.tsx                  Inicio (mismo HTML que el diseño aprobado)
-  quienes-somos/            Nosotros: quiénes somos, misión y visión, líneas de acción, valores, organigrama
+  quienes-somos/            Nosotros: quiénes somos (en el encabezado), misión y visión, valores, áreas de intervención, organigrama
   noticias/                 Listado paginado (/noticias, /noticias/pagina/N) y detalle (/noticias/[slug])
   contacto/                 Contacto y atención al ciudadano + formulario
   preguntas-frecuentes/     Plantilla "Muy pronto" hasta que se carguen preguntas
@@ -221,7 +221,7 @@ Cada página se identifica por su **slug** y usa una **plantilla**, que es la qu
 | Ruta del sitio | Slug en WP | Plantilla | Pestañas | Tipo en `lib/types.ts` |
 |---|---|---|---|---|
 | `/` | `inicio` | Asoproyuja: Inicio | Slider · Bienvenida · Accesos rápidos · Noticias · Aliados · Newsletter · Apóyanos | `Inicio` |
-| `/quienes-somos` | `quienes-somos` | Asoproyuja: Quiénes somos | Encabezado · Quiénes somos · Misión y visión · Líneas de acción · Valores · Organigrama · Llamado a la acción | `QuienesSomos` |
+| `/quienes-somos` | `quienes-somos` | Asoproyuja: Quiénes somos | Encabezado (con el texto de quiénes somos) · Misión y visión · Valores · Áreas de intervención · Organigrama · Llamado a la acción | `QuienesSomos` |
 | `/noticias` | `noticias` | Asoproyuja: Noticias | Encabezado · Listado (noticias por página) · Llamado a la acción | `NoticiasPagina` |
 | `/contacto` | `contacto` | Asoproyuja: Contacto | Encabezado · Canales de atención · Formulario (opciones de asunto) · Mapa | `Contacto` |
 | `/preguntas-frecuentes` | `preguntas-frecuentes` | Asoproyuja: Preguntas frecuentes | Encabezado · Muy pronto · Preguntas · Llamado a la acción | `PreguntasFrecuentes` |
@@ -351,6 +351,6 @@ Para revisar qué entrega WordPress: `https://cms.asoproyuja.org/wp-json/wp/v2/p
 - **Facebook:** el enlace apunta a la página `asociacion.asoneshca`. Si la asociación tiene una página con el nombre nuevo, cambiarla en Ajustes del sitio.
 - **Preguntas frecuentes y Cómo ayudar:** están en "Muy pronto" hasta que el cliente envíe el contenido (preguntas, formas de ayudar y datos para donar).
 - **Noticias:** el cuerpo de las 3 noticias es el mismo resumen aprobado. Se pueden ampliar desde WordPress.
-- **Nosotros:** los textos de misión, visión, valores, líneas de acción y organigrama salen del brochure enviado por el cliente (con el nombre actual, ASOPROYUJA). El sello usa "+ de 28 años", igual que el Inicio.
+- **Nosotros:** los textos de quiénes somos, misión, visión, valores, áreas de intervención y organigrama salen del brochure enviado por el cliente (con el nombre actual, ASOPROYUJA).
 - **Política de datos:** es un texto base conforme a la Ley 1581 de 2012. Debe revisarlo la asociación (o su asesor legal) y completar un correo para el ejercicio de derechos cuando lo tengan.
 - **Newsletter:** el diseño aprobado no tiene casilla de autorización. Se recomienda ajustar la "Nota bajo el formulario" para mencionar la política de datos.

@@ -278,22 +278,18 @@ grupo(
     "quienes-somos",
     "Página: Quiénes somos",
     [
-        tab("Encabezado"), hero(),
-        tab("Quiénes somos"),
-        group("Quiénes somos", "identidad", [
-            image("Imagen", "imagen", width=50), text("Texto alternativo", "imagen_alt", width=50),
-            text("Sello: número", "sello_numero", width=35), text("Sello: texto", "sello_texto", width=65),
-            text("Antetítulo", "eyebrow", width=35), text("Título", "titulo", width=65),
-            wysiwyg("Contenido", "contenido"),
+        tab("Encabezado"),
+        group("Encabezado de la página (franja verde)", "hero", encabezado() + [
+            wysiwyg("Quiénes somos (texto bajo el título)", "contenido"),
         ]),
         tab("Misión y visión"),
         group("Misión y visión", "mision_vision", encabezado() + [wysiwyg("Misión", "mision"), wysiwyg("Visión", "vision")]),
-        tab("Líneas de acción"),
-        group("Líneas de acción", "lineas", encabezado() + [
-            repeater("Líneas", "items", [
+        tab("Áreas de intervención"),
+        group("Áreas de intervención", "lineas", encabezado() + [
+            repeater("Áreas", "items", [
                 icono(width=34), color(width=33), text("Título", "titulo", width=33),
                 textos("Ítems", "items"),
-            ], boton="Agregar línea"),
+            ], boton="Agregar área"),
         ]),
         tab("Valores"),
         group("Valores", "valores", encabezado() + [

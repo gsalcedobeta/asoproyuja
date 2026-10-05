@@ -31,6 +31,11 @@ a.aliado-slot.aliado-logo:hover{transform:translateY(-3px);box-shadow:var(--shad
 .page-hero .eyebrow-dot{background:var(--gold);}
 .page-hero h1{font-size:clamp(2rem,4vw,2.9rem);line-height:1.14;margin:14px 0 14px;color:#FBF6E9;max-width:24ch;}
 .page-hero h1.h1-long{font-size:clamp(1.45rem,2.6vw,2rem);max-width:44ch;}
+.page-hero-texto{margin-top:18px;max-width:78ch;}
+.page-hero.con-texto > .wrap > p{max-width:78ch;}
+.page-hero .page-hero-texto p{max-width:none;}
+.page-hero-texto p + p{margin-top:12px;}
+.page-hero-texto strong{color:#FBF6E9;}
 .page-hero p{color:#CBD8BE;font-size:1.06rem;max-width:56ch;}
 .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:0.82rem;color:#9FB08F;margin-bottom:22px;}
 .breadcrumb a{color:#CFDBC5;font-weight:600;transition:color .15s ease;}
@@ -52,6 +57,8 @@ a.aliado-slot.aliado-logo:hover{transform:translateY(-3px);box-shadow:var(--shad
 
 /* ---------- Llamado a la acción (panel naranja) ---------- */
 .cta-section{padding-top:0;}
+/* Después de una sección con fondo (crema o textura) el panel necesita su propio espacio arriba */
+.noticias + .cta-section,.bg-alt + .cta-section,.pronto + .cta-section{padding-top:96px;}
 .cta-panel{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
 .cta-panel h2{margin:10px 0 8px;}
 .cta-panel p{margin-bottom:0;}
@@ -126,9 +133,6 @@ a.pag-btn:hover{border-color:var(--brand);color:var(--brand);}
 @media(max-width:700px){.mapa{aspect-ratio:4/3;}}
 
 /* ---------- Quiénes somos ---------- */
-.identidad .rich{color:var(--text-muted);font-size:1.02rem;max-width:56ch;}
-.identidad .rich strong{color:var(--brand-deep);}
-
 .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .mv-card{border-radius:28px;padding:44px;position:relative;overflow:hidden;}
 .mv-card h3{font-size:1.6rem;margin:12px 0 14px;}

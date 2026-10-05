@@ -18,9 +18,22 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 }
 
 /** Encabezado de página interior: franja verde con la textura del hero del Inicio. */
-export function PageHero({ migas, eyebrow, titulo, texto }: { migas: Miga[]; eyebrow: string; titulo: string; texto?: string }) {
+export function PageHero({
+  migas,
+  eyebrow,
+  titulo,
+  texto,
+  contenido,
+}: {
+  migas: Miga[];
+  eyebrow: string;
+  titulo: string;
+  texto?: string;
+  /** Texto adicional en HTML bajo el título (por ejemplo, en Quiénes somos). */
+  contenido?: string;
+}) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero${contenido ? " con-texto" : ""}`}>
       <Pieza p={{ s: 96, c: "#F2B035", w: 5.5, o: 0.28, r: 18, pos: { top: "18%", right: "6%" } }} />
       <Pieza p={{ s: 54, c: "#3F8557", w: 6, o: 0.45, r: -24, pos: { bottom: "14%", right: "18%" } }} />
       <div className="wrap">
@@ -36,6 +49,7 @@ export function PageHero({ migas, eyebrow, titulo, texto }: { migas: Miga[]; eye
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className={titulo.length > 70 ? "h1-long" : undefined}>{titulo}</h1>
         {texto ? <p>{texto}</p> : null}
+        {contenido ? <Html html={contenido} className="page-hero-texto" /> : null}
       </div>
     </section>
   );
@@ -159,23 +173,6 @@ export function Paginacion({ pagina, total }: { pagina: number; total: number })
           ›
         </span>
       )}
-    </div>
-  );
-}
-
-/** Imagen con forma orgánica y sello amarillo (bloque de bienvenida del Inicio). */
-export function ImagenSello({ imagen, alt, numero, texto }: { imagen: string; alt: string; numero: string; texto: string }) {
-  return (
-    <div className="bien-media reveal">
-      <div className="mask-frame">
-        <img src={imagen} alt={alt} />
-      </div>
-      {numero || texto ? (
-        <div className="bien-badge">
-          <span className="bien-badge-num">{numero}</span>
-          <span className="bien-badge-txt">{texto}</span>
-        </div>
-      ) : null}
     </div>
   );
 }

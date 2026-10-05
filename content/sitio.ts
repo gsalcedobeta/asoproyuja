@@ -146,14 +146,6 @@ export const quienesSomos: QuienesSomos = {
     eyebrow: "Nosotros",
     titulo: "Quiénes somos",
     texto: "Trabajamos por la niñez, las familias y las comunidades de Colombia con programas de intervención social.",
-  },
-  identidad: {
-    imagen: "/assets/img/nosotros-aula.jpg",
-    imagen_alt: "Niñas y niños en un aula de Asoproyuja",
-    sello_numero: "+ de 28 años",
-    sello_texto: "Trabajando por la niñez y su bienestar",
-    eyebrow: "Quiénes somos",
-    titulo: "Proyectos que mejoran la calidad de vida",
     contenido:
       "<p>Somos una entidad que se especializa en programas de intervención social que promueven la inclusión, educación y protección de comunidades vulnerables.</p><p>A través de distintos proyectos contribuimos a mejorar la calidad de vida de la primera infancia, familias, adultos mayores y comunidades con enfoques diferenciales.</p>",
   },
@@ -166,9 +158,9 @@ export const quienesSomos: QuienesSomos = {
       "<p>Ser una asociación agropecuaria líder a nivel nacional, reconocida por transformar vidas a través de la producción agrícola sostenible, la protección de la niñez y el fortalecimiento de las comunidades. En el año 2035, <strong>ASOPROYUJA</strong> aspira a consolidarse como un referente de <strong>desarrollo rural, seguridad alimentaria, trabajo social en primera infancia e impacto comunitario</strong>, sembrando oportunidades, esperanza y bienestar para las futuras generaciones.</p>",
   },
   lineas: {
-    eyebrow: "Líneas de acción",
-    titulo: "Asesoramiento y ejecución de proyectos",
-    texto: "Proyectos que contribuyen a mejorar la calidad de vida poblacional.",
+    eyebrow: "Lo que hacemos",
+    titulo: "Áreas de intervención",
+    texto: "Asesoramos y ejecutamos proyectos que contribuyen a mejorar la calidad de vida de la población.",
     items: [
       {
         icono: "hoja",

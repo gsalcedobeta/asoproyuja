@@ -67,121 +67,9 @@
           "rows": 2,
           "new_lines": "",
           "key": "field_47ac93f78ae39"
-        }
-      ],
-      "key": "field_705a69286a865"
-    },
-    {
-      "label": "Quiénes somos",
-      "name": "",
-      "type": "tab",
-      "placement": "top",
-      "endpoint": 0,
-      "key": "field_68422d14b29e1"
-    },
-    {
-      "label": "Quiénes somos",
-      "name": "identidad",
-      "type": "group",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "layout": "block",
-      "sub_fields": [
-        {
-          "label": "Imagen",
-          "name": "imagen",
-          "type": "image",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "50",
-            "class": "",
-            "id": ""
-          },
-          "return_format": "url",
-          "preview_size": "medium",
-          "library": "all",
-          "key": "field_bfa28e3cfc269"
         },
         {
-          "label": "Texto alternativo",
-          "name": "imagen_alt",
-          "type": "text",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "50",
-            "class": "",
-            "id": ""
-          },
-          "key": "field_c9b52a93e63aa"
-        },
-        {
-          "label": "Sello: número",
-          "name": "sello_numero",
-          "type": "text",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "35",
-            "class": "",
-            "id": ""
-          },
-          "key": "field_085a0e6bcc0e4"
-        },
-        {
-          "label": "Sello: texto",
-          "name": "sello_texto",
-          "type": "text",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "65",
-            "class": "",
-            "id": ""
-          },
-          "key": "field_e226888ceb745"
-        },
-        {
-          "label": "Antetítulo",
-          "name": "eyebrow",
-          "type": "text",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "35",
-            "class": "",
-            "id": ""
-          },
-          "key": "field_39e2161ed4aea"
-        },
-        {
-          "label": "Título",
-          "name": "titulo",
-          "type": "text",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "65",
-            "class": "",
-            "id": ""
-          },
-          "key": "field_de95b060ae24d"
-        },
-        {
-          "label": "Contenido",
+          "label": "Quiénes somos (texto bajo el título)",
           "name": "contenido",
           "type": "wysiwyg",
           "instructions": "",
@@ -196,10 +84,10 @@
           "toolbar": "full",
           "media_upload": 1,
           "delay": 0,
-          "key": "field_d46a601ac3b75"
+          "key": "field_b1564e8ee4800"
         }
       ],
-      "key": "field_8dc3112bef3af"
+      "key": "field_705a69286a865"
     },
     {
       "label": "Misión y visión",
@@ -307,15 +195,15 @@
       "key": "field_54e27693f8a30"
     },
     {
-      "label": "Líneas de acción",
+      "label": "Áreas de intervención",
       "name": "",
       "type": "tab",
       "placement": "top",
       "endpoint": 0,
-      "key": "field_488952f549d73"
+      "key": "field_c73dd9cb579fd"
     },
     {
-      "label": "Líneas de acción",
+      "label": "Áreas de intervención",
       "name": "lineas",
       "type": "group",
       "instructions": "",
@@ -373,7 +261,7 @@
           "key": "field_ca39aad2b19a1"
         },
         {
-          "label": "Líneas",
+          "label": "Áreas",
           "name": "items",
           "type": "repeater",
           "instructions": "",
@@ -385,7 +273,7 @@
             "id": ""
           },
           "layout": "block",
-          "button_label": "Agregar línea",
+          "button_label": "Agregar área",
           "min": 0,
           "max": 0,
           "sub_fields": [

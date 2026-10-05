@@ -105,16 +105,8 @@ export type Inicio = {
 
 // ---------- Quiénes somos ----------
 export type QuienesSomos = {
-  hero: Encabezado;
-  identidad: {
-    imagen: string;
-    imagen_alt: string;
-    sello_numero: string;
-    sello_texto: string;
-    eyebrow: string;
-    titulo: string;
-    contenido: string; // HTML
-  };
+  /** Encabezado verde; "contenido" es el texto de quiénes somos que va debajo del título. */
+  hero: Encabezado & { contenido: string }; // HTML
   mision_vision: Encabezado & { mision: string; vision: string }; // HTML
   lineas: Encabezado & {
     items: { icono: IconName; color: ColorIcono; titulo: string; items: Texto[] }[];
