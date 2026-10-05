@@ -76,6 +76,7 @@ components/
   Header.tsx                Menú partido alrededor del logo + panel lateral en móvil
   Footer.tsx                Pie de página y botón flotante "Donar ahora"
   Slider.tsx                Slider del Inicio
+  ReelsCarousel.tsx         Carrusel de reels de Instagram del Inicio
   Piezas.tsx                Piezas de rompecabezas decorativas (posiciones exactas del diseño)
   Blocks.tsx                Encabezado de página, llamados a la acción, tarjetas, "Muy pronto", paginación
   Icon.tsx                  Iconos lineales (claves = opciones del campo "Icono" en ACF)
@@ -220,7 +221,7 @@ Cada página se identifica por su **slug** y usa una **plantilla**, que es la qu
 
 | Ruta del sitio | Slug en WP | Plantilla | Pestañas | Tipo en `lib/types.ts` |
 |---|---|---|---|---|
-| `/` | `inicio` | Asoproyuja: Inicio | Slider · Bienvenida · Accesos rápidos · Noticias · Aliados · Newsletter · Apóyanos | `Inicio` |
+| `/` | `inicio` | Asoproyuja: Inicio | Slider · Bienvenida · Accesos rápidos · Noticias · Reels de Instagram · Aliados · Newsletter · Apóyanos | `Inicio` |
 | `/quienes-somos` | `quienes-somos` | Asoproyuja: Quiénes somos | Encabezado (con el texto de quiénes somos) · Misión y visión · Valores · Áreas de intervención · Organigrama · Llamado a la acción | `QuienesSomos` |
 | `/noticias` | `noticias` | Asoproyuja: Noticias | Encabezado · Listado (noticias por página) · Llamado a la acción | `NoticiasPagina` |
 | `/contacto` | `contacto` | Asoproyuja: Contacto | Encabezado · Canales de atención · Formulario (opciones de asunto) · Mapa | `Contacto` |
@@ -251,6 +252,7 @@ Cada página se identifica por su **slug** y usa una **plantilla**, que es la qu
 - **Menú principal:** en escritorio, la primera mitad de los ítems va a la izquierda del logo y el resto a la derecha.
 - **Slider:** el marco, el giro y las cintas de cada foto se repiten en ciclo como en el diseño. Los títulos de más de 55 caracteres se muestran un poco más pequeños.
 - **Aliados:** si no hay logos, la sección no se muestra.
+- **Reels de Instagram:** cada reel lleva portada vertical (9:16), URL del reel y una descripción corta (se muestra hasta en 4 líneas). El carrusel avanza solo, se detiene al pasar el mouse y abre el reel en Instagram. Sin reels, la sección no se muestra.
 - **Noticias:** el diseño no muestra fechas; la fecha de publicación solo ordena el listado (de la más reciente a la más antigua). Las 3 más recientes aparecen en el Inicio.
 
 ### Iconos
@@ -318,7 +320,11 @@ Desde WordPress: **Apariencia → Menús**. El importador crea "Menú principal"
 
 ### Publicar una noticia
 
-Noticias → Agregar noticia: título, cuerpo en el editor, **imagen destacada** (foto de la tarjeta, horizontal) y "Resumen de la tarjeta". Al publicar, aparece en el Inicio y en `/noticias`.
+Noticias → Agregar noticia: título, cuerpo en el editor, **imagen destacada** (foto de la tarjeta, horizontal) y "Resumen de la tarjeta". Al publicar, aparece en el Inicio y en `/noticias`. El orden lo da la fecha de publicación.
+
+### Agregar un reel de Instagram
+
+Páginas → Inicio → pestaña **Reels de Instagram** → Agregar reel: portada vertical (captura del video, 9:16), URL del reel y descripción corta. Se reordenan arrastrando las filas.
 
 ### Cambiar textos del contenido de respaldo
 
@@ -350,7 +356,7 @@ Para revisar qué entrega WordPress: `https://cms.asoproyuja.org/wp-json/wp/v2/p
 - **Mapa:** se ubicó con la dirección (Calle 9 N. 19-42, Los Almendros, Santa Marta). Confirmar que el punto quede bien; si no, pegar en Ajustes del sitio la URL de "Insertar un mapa" de Google Maps.
 - **Facebook:** el enlace apunta a la página `asociacion.asoneshca`. Si la asociación tiene una página con el nombre nuevo, cambiarla en Ajustes del sitio.
 - **Preguntas frecuentes y Cómo ayudar:** están en "Muy pronto" hasta que el cliente envíe el contenido (preguntas, formas de ayudar y datos para donar).
-- **Noticias:** el cuerpo de las 3 noticias es el mismo resumen aprobado. Se pueden ampliar desde WordPress.
+- **Noticias:** las 6 noticias reales están cargadas (en el contenido de respaldo y en el importador). Sus fechas solo ordenan el listado y algunas son aproximadas; se ajustan en WordPress → Noticias → "Publicado el". La foto de "Mañana Blanca" muestra al fondo un pendón con el nombre anterior de la asociación; si se quiere evitar, cambiarla por otra foto en WordPress.
 - **Nosotros:** los textos de quiénes somos, misión, visión, valores, áreas de intervención y organigrama salen del brochure enviado por el cliente (con el nombre actual, ASOPROYUJA).
 - **Política de datos:** es un texto base conforme a la Ley 1581 de 2012. Debe revisarlo la asociación (o su asesor legal) y completar un correo para el ejercicio de derechos cuando lo tengan.
 - **Newsletter:** el diseño aprobado no tiene casilla de autorización. Se recomienda ajustar la "Nota bajo el formulario" para mencionar la política de datos.

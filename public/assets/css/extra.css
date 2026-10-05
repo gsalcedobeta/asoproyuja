@@ -17,6 +17,65 @@
 .aliado-slot.aliado-logo img{max-width:100%;max-height:58px;width:auto;height:auto;object-fit:contain;}
 a.aliado-slot.aliado-logo:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
 
+/* ---------- Reels de Instagram (Inicio) ---------- */
+.reels-section{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(242,176,53,0.10), transparent 50%),
+    radial-gradient(circle at 90% 85%, rgba(63,133,87,0.18), transparent 55%),
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1.4px, transparent 0) 0 0/26px 26px,
+    var(--brand-deep);
+}
+.reels-section .wrap{position:relative;z-index:1;}
+.reels-section .eyebrow{color:var(--gold);}
+.reels-section .eyebrow-dot{background:var(--gold);}
+.reels-section .section-head h2{color:#FBF6E9;}
+.reels-section .section-head p{color:#CBD8BE;}
+:root{--reel-card-w:220px;}
+.reels-carousel-wrap{position:relative;}
+.reels-carousel{
+  display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding:6px 4px 12px;
+  scrollbar-width:none;-ms-overflow-style:none;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+}
+.reels-carousel::-webkit-scrollbar{display:none;}
+.reels-arrow{
+  position:absolute;top:46%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:1.3rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:all .15s ease;
+}
+.reels-arrow:hover{background:var(--gold);color:var(--brand-deep);border-color:var(--gold);}
+.reels-arrow.prev{left:-14px;}
+.reels-arrow.next{right:-14px;}
+@media(max-width:760px){.reels-arrow{display:none;}}
+.reel-card{
+  position:relative;flex:0 0 var(--reel-card-w);aspect-ratio:9/16;border-radius:18px;overflow:hidden;display:block;
+  background:#16301F;color:#fff;box-shadow:0 14px 30px rgba(0,0,0,0.28);border:3px solid rgba(242,176,53,0.22);
+  transition:transform .25s ease, border-color .25s ease;
+}
+.reel-card:hover{transform:translateY(-6px);border-color:rgba(242,176,53,0.6);}
+.reel-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .5s ease;}
+.reel-card:hover .reel-cover{transform:scale(1.05);}
+.reel-card::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(10,24,15,.05), rgba(10,24,15,.12) 45%, rgba(10,24,15,.92));}
+.reel-ig-badge{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:9px;z-index:2;background:rgba(255,255,255,.22);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;}
+.reel-play{
+  position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);z-index:2;width:54px;height:54px;border-radius:50%;
+  background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.8);backdrop-filter:blur(2px);
+  display:flex;align-items:center;justify-content:center;transition:all .2s ease;
+}
+.reel-play svg{width:19px;height:19px;margin-left:3px;fill:#fff;}
+.reel-card:hover .reel-play{background:var(--gold);border-color:var(--gold);}
+.reel-card:hover .reel-play svg{fill:var(--brand-deep);}
+.reel-caption{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px 15px 16px;font-size:0.8rem;line-height:1.35;font-weight:600;color:#fff;
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;
+}
+.reels-enlace{text-align:center;margin-top:36px;}
+.reels-section .reels-enlace .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,0.35);}
+.reels-section .reels-enlace .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+@media(max-width:620px){:root{--reel-card-w:62vw;}}
+
 /* ---------- Encabezado de páginas interiores ---------- */
 .page-hero{
   position:relative;overflow:hidden;padding:92px 0 64px;

@@ -70,6 +70,9 @@ export type AccesoRapido = {
 
 export type Aliado = { nombre: string; logo: string; url?: string };
 
+/** Video reel de Instagram: portada vertical (9:16), enlace y descripción corta. */
+export type Reel = { url: string; portada: string; titulo: string };
+
 export type Inicio = {
   slides: Slide[];
   bienvenida: {
@@ -84,6 +87,7 @@ export type Inicio = {
   };
   accesos: AccesoRapido[];
   noticias: Encabezado & { cantidad: number };
+  reels: Encabezado & { items: Reel[]; enlace: Enlace };
   aliados: Encabezado & { logos: Aliado[]; texto_cta: string; enlace_cta: Enlace };
   newsletter: {
     eyebrow: string;

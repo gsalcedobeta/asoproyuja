@@ -245,7 +245,16 @@ grupo(
         group("Noticias", "noticias", encabezado() + [
             number("Cantidad de noticias a mostrar", "cantidad", default_value=3, min=1, max=9),
         ], instructions="Las tarjetas son las noticias más recientes (menú Noticias)."),
-        tab("5. Aliados"),
+        tab("5. Reels de Instagram"),
+        group("Reels de Instagram", "reels", encabezado() + [
+            repeater("Reels", "items", [
+                image("Portada (vertical 9:16)", "portada", width=30),
+                text("URL del reel en Instagram", "url", width=70, instructions="Ej.: https://www.instagram.com/asoproyuja/reel/…/"),
+                area("Descripción corta o título del video", "titulo", rows=2),
+            ], boton="Agregar reel", instructions="Sin reels, la sección no se muestra. El carrusel avanza solo y se puede mover con las flechas."),
+            link("Enlace bajo el carrusel (perfil de Instagram)", "enlace"),
+        ]),
+        tab("6. Aliados"),
         group("Aliados", "aliados", encabezado() + [
             repeater("Logos", "logos", [
                 image("Logo (PNG con fondo transparente)", "logo", width=34),
@@ -255,7 +264,7 @@ grupo(
             text("Frase final", "texto_cta", width=60),
             link("Enlace de la frase", "enlace_cta", width=40),
         ]),
-        tab("6. Newsletter"),
+        tab("7. Newsletter"),
         group("Newsletter", "newsletter", [
             text("Antetítulo", "eyebrow", width=35), text("Título", "titulo", width=65),
             area("Texto", "texto", rows=2),
@@ -264,7 +273,7 @@ grupo(
             text("Mensaje al suscribirse", "mensaje_exito", width=34),
             text("Nota bajo el formulario", "nota"),
         ], instructions="Los correos quedan en el menú Suscriptores (exportable a CSV)."),
-        tab("7. Apóyanos"),
+        tab("8. Apóyanos"),
         group("Apóyanos", "apoyo", [
             text("Antetítulo", "eyebrow", width=35), text("Título", "titulo", width=65),
             area("Texto", "texto", rows=2),

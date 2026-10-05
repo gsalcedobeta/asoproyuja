@@ -107,6 +107,47 @@ export const inicio: Inicio = {
     texto: "Historias y novedades del trabajo con las familias campesinas.",
     cantidad: 3,
   },
+  reels: {
+    eyebrow: "Instagram",
+    titulo: "Momentos que nos inspiran",
+    texto: "Mira en video lo que vivimos con la niñez, las familias y las comunidades del territorio.",
+    items: [
+      {
+        url: "https://www.instagram.com/asoproyuja/reel/DdmTtlgxFYq/",
+        portada: "/assets/img/reels/reel-1.jpg",
+        titulo:
+          "En alianza con el Parque Industrial de Santa Marta, participamos en la Semana de la Salud y la Seguridad en el Trabajo, promoviendo la sensibilización y prevención de la violencia de género.",
+      },
+      {
+        url: "https://www.instagram.com/asoproyuja/reel/DcgnbUKx2EH/",
+        portada: "/assets/img/reels/reel-2.jpg",
+        titulo: "¿Sabías que muchos de los alimentos frescos que cosechamos llegan directamente a la alimentación de nuestros niños y niñas?",
+      },
+      {
+        url: "https://www.instagram.com/asoproyuja/reel/DZDy_UcBcfO/",
+        portada: "/assets/img/reels/reel-3.jpg",
+        titulo:
+          "En el marco de CIMA CARIBE 2026 tuvimos una participación activa y significativa, reafirmando nuestro compromiso con el desarrollo social, el liderazgo y la construcción de oportunidades para nuestras comunidades.",
+      },
+      {
+        url: "https://www.instagram.com/ultimahorasantamarta/reel/DSnQtFICb31/",
+        portada: "/assets/img/reels/reel-4.jpg",
+        titulo: "Asoproyuja realizó su encuentro de fin de año en su sede ubicada en el barrio Los Almendros.",
+      },
+      {
+        url: "https://www.instagram.com/asoproyuja/reel/DSSsSZHicHb/",
+        portada: "/assets/img/reels/reel-5.jpg",
+        titulo:
+          "Culminamos este año 2025 con gran satisfacción. En la Modalidad Institucional avanzamos hacia una nueva etapa junto a nuestros niños y niñas, quienes hoy transitan con ilusión hacia la educación inicial.",
+      },
+      {
+        url: "https://www.instagram.com/asoproyuja/reel/DSK0ypVDa7Q/",
+        portada: "/assets/img/reels/reel-6.jpg",
+        titulo: "A pocos días de nuestra clausura, nuestros niños y niñas preparan sus canciones.",
+      },
+    ],
+    enlace: { title: "Síguenos en Instagram @asoproyuja", url: "https://www.instagram.com/asoproyuja", target: "_blank" },
+  },
   aliados: {
     eyebrow: "Aliados",
     titulo: "Organizaciones que caminan con nosotros",

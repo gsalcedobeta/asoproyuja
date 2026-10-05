@@ -4,6 +4,7 @@ import { NoticiaCard } from "@/components/Blocks";
 import { Icon, IconoCirculo } from "@/components/Icon";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { Piezas } from "@/components/Piezas";
+import { ReelsCarousel } from "@/components/ReelsCarousel";
 import { Slider } from "@/components/Slider";
 import { SmartLink } from "@/components/SmartLink";
 import { getInicio, getNoticias } from "@/lib/cms";
@@ -14,6 +15,7 @@ export default async function InicioPage() {
   const [d, noticias] = await Promise.all([getInicio(), getNoticias()]);
   const recientes = noticias.slice(0, Number(d.noticias.cantidad) || 3);
   const logos = (d.aliados.logos || []).filter((l) => l.logo);
+  const reels = (d.reels?.items || []).filter((r) => r.url && r.portada);
 
   return (
     <>
@@ -87,6 +89,31 @@ export default async function InicioPage() {
           </div>
         </div>
       </section>
+
+      {reels.length > 0 && (
+        <section className="section reels-section" id="reels">
+          <Piezas grupo="duo" />
+          <div className="wrap">
+            <div className="section-head reveal">
+              <span className="eyebrow">
+                <span className="eyebrow-dot"></span>
+                {d.reels.eyebrow}
+              </span>
+              <h2>{d.reels.titulo}</h2>
+              {d.reels.texto ? <p>{d.reels.texto}</p> : null}
+            </div>
+            <ReelsCarousel items={reels} />
+            {d.reels.enlace?.url ? (
+              <div className="reels-enlace">
+                <SmartLink className="btn btn-outline" href={d.reels.enlace.url} newTab>
+                  <Icon name="instagram" />
+                  {d.reels.enlace.title}
+                </SmartLink>
+              </div>
+            ) : null}
+          </div>
+        </section>
+      )}
 
       {logos.length > 0 && (
         <section className="section aliados" id="aliados">

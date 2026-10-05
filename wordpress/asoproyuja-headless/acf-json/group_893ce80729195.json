@@ -530,12 +530,163 @@
       "key": "field_bbee54ecf8130"
     },
     {
-      "label": "5. Aliados",
+      "label": "5. Reels de Instagram",
       "name": "",
       "type": "tab",
       "placement": "top",
       "endpoint": 0,
-      "key": "field_bcf93f32c19fb"
+      "key": "field_b948567c56f88"
+    },
+    {
+      "label": "Reels de Instagram",
+      "name": "reels",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "label": "Antetítulo (eyebrow)",
+          "name": "eyebrow",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "35",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_f41ea4b4d0598"
+        },
+        {
+          "label": "Título",
+          "name": "titulo",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "65",
+            "class": "",
+            "id": ""
+          },
+          "key": "field_d2ffe56f14aef"
+        },
+        {
+          "label": "Texto",
+          "name": "texto",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 2,
+          "new_lines": "",
+          "key": "field_082b62114ff25"
+        },
+        {
+          "label": "Reels",
+          "name": "items",
+          "type": "repeater",
+          "instructions": "Sin reels, la sección no se muestra. El carrusel avanza solo y se puede mover con las flechas.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "button_label": "Agregar reel",
+          "min": 0,
+          "max": 0,
+          "sub_fields": [
+            {
+              "label": "Portada (vertical 9:16)",
+              "name": "portada",
+              "type": "image",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+              },
+              "return_format": "url",
+              "preview_size": "medium",
+              "library": "all",
+              "key": "field_4d3d73b9dd69e"
+            },
+            {
+              "label": "URL del reel en Instagram",
+              "name": "url",
+              "type": "text",
+              "instructions": "Ej.: https://www.instagram.com/asoproyuja/reel/…/",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+              },
+              "key": "field_7fd308bc3c7c6"
+            },
+            {
+              "label": "Descripción corta o título del video",
+              "name": "titulo",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "rows": 2,
+              "new_lines": "",
+              "key": "field_98acbd73b39de"
+            }
+          ],
+          "key": "field_3e332301715e3"
+        },
+        {
+          "label": "Enlace bajo el carrusel (perfil de Instagram)",
+          "name": "enlace",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "key": "field_662452f76ffee"
+        }
+      ],
+      "key": "field_0b400e21dd18e"
+    },
+    {
+      "label": "6. Aliados",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_6efc8c58391f5"
     },
     {
       "label": "Aliados",
@@ -693,12 +844,12 @@
       "key": "field_6680ce5b1afd7"
     },
     {
-      "label": "6. Newsletter",
+      "label": "7. Newsletter",
       "name": "",
       "type": "tab",
       "placement": "top",
       "endpoint": 0,
-      "key": "field_4092c5c3a7614"
+      "key": "field_b74625cc43b00"
     },
     {
       "label": "Newsletter",
@@ -818,12 +969,12 @@
       "key": "field_aa85a7bff92f5"
     },
     {
-      "label": "7. Apóyanos",
+      "label": "8. Apóyanos",
       "name": "",
       "type": "tab",
       "placement": "top",
       "endpoint": 0,
-      "key": "field_c93680f737289"
+      "key": "field_bd736c25a4153"
     },
     {
       "label": "Apóyanos",
