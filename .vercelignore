@@ -1,0 +1,7 @@
+# Vercel solo necesita el proyecto Next.js. Lo de WordPress y la documentación
+# no se sube al build (de todas formas nunca serían accesibles desde el sitio).
+# Las rutas empiezan con "/" para no excluir por error public/assets.
+/wordpress/
+/README.md
+/entregables/
+/design-src/

@@ -1,0 +1,206 @@
+/* =====================================================================
+   Asoproyuja — estilos de lo nuevo (páginas interiores, formularios, logos).
+   style.css es la hoja aprobada y NO se modifica. Aquí solo se usan sus
+   variables (--brand, --brand-deep, --accent, --gold, --bg-alt, --border…)
+   y sus mismas medidas (radios 16/24/28px, sombras, botones redondeados).
+   ===================================================================== */
+
+/* ---------- Utilidades ---------- */
+.hp-field{position:absolute !important;left:-9999px !important;width:1px;height:1px;overflow:hidden;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.section-head.center .eyebrow{justify-content:center;}
+.section.tight{padding:72px 0;}
+.bg-alt{background:var(--bg-alt);}
+
+/* ---------- Logos de aliados (reemplazan los recuadros "Logo aliado") ---------- */
+.aliado-slot.aliado-logo{background:var(--surface);border:1.5px solid var(--border);opacity:1;padding:12px 18px;transition:transform .2s ease, box-shadow .2s ease;}
+.aliado-slot.aliado-logo img{max-width:100%;max-height:58px;width:auto;height:auto;object-fit:contain;}
+a.aliado-slot.aliado-logo:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+
+/* ---------- Encabezado de páginas interiores ---------- */
+.page-hero{
+  position:relative;overflow:hidden;padding:92px 0 64px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(242,176,53,0.10), transparent 50%),
+    radial-gradient(circle at 88% 78%, rgba(63,133,87,0.18), transparent 55%),
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1.4px, transparent 0) 0 0/26px 26px,
+    var(--brand-deep);
+}
+.page-hero .wrap{position:relative;z-index:1;}
+.page-hero .eyebrow{color:var(--gold);}
+.page-hero .eyebrow-dot{background:var(--gold);}
+.page-hero h1{font-size:clamp(2rem,4vw,2.9rem);line-height:1.14;margin:14px 0 14px;color:#FBF6E9;max-width:24ch;}
+.page-hero h1.h1-long{font-size:clamp(1.45rem,2.6vw,2rem);max-width:44ch;}
+.page-hero p{color:#CBD8BE;font-size:1.06rem;max-width:56ch;}
+.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:0.82rem;color:#9FB08F;margin-bottom:22px;}
+.breadcrumb a{color:#CFDBC5;font-weight:600;transition:color .15s ease;}
+.breadcrumb a:hover{color:var(--gold);}
+.breadcrumb .sep{margin:0 6px;opacity:.6;}
+@media(max-width:900px){.page-hero{padding:120px 0 52px;}.page-hero svg{display:none;}}
+
+/* ---------- Contenido enriquecido (WordPress) ---------- */
+.rich{color:var(--text);font-size:1rem;}
+.rich > * + *{margin-top:14px;}
+.rich h2{font-size:1.35rem;margin-top:34px;}
+.rich h3{font-size:1.12rem;margin-top:26px;}
+.rich ul,.rich ol{padding-left:22px;margin-bottom:0;}
+.rich li + li{margin-top:6px;}
+.rich a{color:var(--accent);font-weight:700;border-bottom:1.5px solid currentColor;}
+.rich strong{color:var(--brand-deep);}
+.rich img{border-radius:18px;height:auto;}
+.rich blockquote{margin:0;padding:14px 20px;border-left:4px solid var(--gold);background:var(--bg-alt);border-radius:0 16px 16px 0;}
+
+/* ---------- Llamado a la acción (panel naranja) ---------- */
+.cta-section{padding-top:0;}
+.cta-panel{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.cta-panel h2{margin:10px 0 8px;}
+.cta-panel p{margin-bottom:0;}
+.cta-btn{background:#fff;color:var(--accent-hover);padding:14px 26px;border-radius:999px;font-weight:800;font-size:0.92rem;white-space:nowrap;transition:all .15s ease;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.18);}
+
+/* ---------- Plantilla "Muy pronto" ---------- */
+.pronto{padding:88px 0 96px;}
+.pronto-panel{flex-direction:row;align-items:center;justify-content:space-between;gap:24px;min-height:360px;padding:56px 56px;overflow:hidden;}
+.pronto-copy{max-width:520px;position:relative;z-index:1;}
+.pronto-panel h2{font-size:clamp(1.5rem,2.6vw,2rem);max-width:none;margin:12px 0 14px;}
+.pronto-panel p{max-width:46ch;font-size:1rem;margin-bottom:26px;}
+.pronto-mascot{width:250px;flex-shrink:0;margin:-30px -10px -60px 0;filter:drop-shadow(0 16px 20px rgba(31,68,48,0.22));}
+@media(max-width:900px){
+  .pronto-panel{flex-direction:column-reverse;align-items:flex-start;padding:40px 28px;}
+  .pronto-mascot{width:150px;margin:0;align-self:center;}
+}
+
+/* ---------- Noticias: listado, paginación y detalle ---------- */
+.noticias-listado{background:var(--bg-alt);}
+.noticias-vacio{text-align:center;color:var(--text-muted);padding:40px 0;}
+.paginacion{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:48px;flex-wrap:wrap;}
+.pag-btn{min-width:42px;height:42px;padding:0 12px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--brand-deep);font-weight:700;font-size:0.92rem;transition:all .15s ease;}
+a.pag-btn:hover{border-color:var(--brand);color:var(--brand);}
+.pag-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+.pag-btn.disabled{opacity:.4;}
+
+.articulo{max-width:820px;margin:0 auto;}
+.articulo-foto{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:36px;aspect-ratio:16/10;}
+.articulo-foto img{width:100%;height:100%;object-fit:cover;}
+.articulo .rich{font-size:1.06rem;}
+.volver{display:inline-flex;align-items:center;gap:6px;margin-top:36px;font-size:0.9rem;font-weight:700;color:var(--accent);}
+
+/* ---------- Contacto / atención al ciudadano ---------- */
+.contacto-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:40px;align-items:start;}
+.canales{display:grid;gap:14px;margin-top:6px;}
+.canal{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px 20px;}
+.canal .quick-ico{width:46px;height:46px;margin:0;flex-shrink:0;}
+.canal b{display:block;color:var(--brand-deep);font-size:0.92rem;margin-bottom:2px;}
+.canal span,.canal a{color:var(--text-muted);font-size:0.95rem;}
+.canal a:hover{color:var(--accent);}
+.canal-redes{display:flex;gap:10px;margin-top:6px;}
+.canal-redes a{width:36px;height:36px;border-radius:50%;background:var(--bg-alt);color:var(--brand-deep);display:flex;align-items:center;justify-content:center;transition:all .15s ease;}
+.canal-redes a:hover{background:var(--accent);color:#fff;}
+.form-card{background:var(--surface);border-radius:28px;padding:40px;box-shadow:var(--shadow);border:1px solid var(--border);}
+.form-card h2{font-size:1.5rem;margin:12px 0 8px;}
+.form-card > p{color:var(--text-muted);margin-bottom:24px;}
+@media(max-width:900px){.contacto-grid{grid-template-columns:1fr;}.form-card{padding:28px 22px;}}
+
+.contacto-form{display:grid;gap:16px;}
+.contacto-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:620px){.contacto-form .form-row{grid-template-columns:1fr;}}
+.contacto-form label{display:block;font-size:0.84rem;font-weight:700;color:var(--brand-deep);margin-bottom:6px;}
+.form-opcional{font-weight:400;color:var(--text-muted);}
+.contacto-form input[type="text"],.contacto-form input[type="email"],.contacto-form input[type="tel"],.contacto-form select,.contacto-form textarea{
+  width:100%;padding:13px 16px;border-radius:14px;border:1.5px solid var(--border);background:var(--bg-alt);
+  font:inherit;font-size:0.95rem;color:var(--text);transition:border-color .15s ease, background .15s ease;
+}
+.contacto-form textarea{min-height:140px;resize:vertical;}
+.contacto-form input:focus,.contacto-form select:focus,.contacto-form textarea:focus{outline:none;border-color:var(--brand);background:var(--surface);}
+.form-consent{display:flex !important;gap:10px;align-items:flex-start;font-weight:400 !important;color:var(--text-muted) !important;font-size:0.85rem !important;line-height:1.5;}
+.form-consent input{margin-top:3px;accent-color:var(--brand);width:16px;height:16px;flex-shrink:0;}
+.form-consent a{color:var(--brand);font-weight:700;border-bottom:1.5px solid var(--brand);}
+.contacto-form .btn{justify-self:start;}
+.contacto-form .btn[disabled]{opacity:.7;cursor:wait;}
+.form-status{padding:12px 16px;border-radius:14px;font-size:0.9rem;}
+.form-status.ok{background:rgba(63,133,87,0.12);color:var(--brand-deep);}
+.form-status.error{background:rgba(193,80,46,0.10);color:var(--accent-hover);}
+
+.mapa{border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);aspect-ratio:21/8;background:var(--bg-alt);}
+.mapa iframe{width:100%;height:100%;border:0;display:block;}
+@media(max-width:700px){.mapa{aspect-ratio:4/3;}}
+
+/* ---------- Quiénes somos ---------- */
+.identidad .rich{color:var(--text-muted);font-size:1.02rem;max-width:56ch;}
+.identidad .rich strong{color:var(--brand-deep);}
+
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.mv-card{border-radius:28px;padding:44px;position:relative;overflow:hidden;}
+.mv-card h3{font-size:1.6rem;margin:12px 0 14px;}
+.mv-card .rich{font-size:0.98rem;}
+.mv-card.mision{background:var(--brand-deep);color:#CFDBC5;}
+.mv-card.mision h3{color:#FBF6E9;}
+.mv-card.mision .eyebrow{color:var(--gold);}
+.mv-card.mision .eyebrow-dot{background:var(--gold);}
+.mv-card.mision .rich{color:#CFDBC5;}
+.mv-card.mision .rich strong{color:#fff;}
+.mv-card.vision{background:var(--bg-alt);border:1px solid var(--border);}
+.mv-card.vision .rich{color:var(--text-muted);}
+@media(max-width:900px){.mv-grid{grid-template-columns:1fr;}.mv-card{padding:32px 26px;}}
+
+.lineas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;}
+.linea-card{background:var(--surface);border-radius:16px;padding:28px 22px 24px;box-shadow:0 12px 26px rgba(31,68,48,0.10);position:relative;}
+.linea-card .quick-ico{margin:0 0 16px;}
+.linea-card h4{font-size:1.02rem;color:var(--brand-deep);margin:0 0 10px;}
+.linea-card ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;}
+.linea-card li{font-size:0.88rem;color:var(--text-muted);padding-left:16px;position:relative;}
+.linea-card li::before{content:"";position:absolute;left:0;top:0.62em;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+
+.valores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-top:12px;}
+.valor-card{background:var(--surface);border-radius:16px;padding:30px 22px 26px;text-align:center;box-shadow:0 12px 26px rgba(31,68,48,0.10);position:relative;transition:transform .2s ease;}
+.valor-card:nth-child(odd){transform:rotate(-2deg);}
+.valor-card:nth-child(even){transform:rotate(1.5deg);}
+.valor-card:hover{transform:rotate(0deg) translateY(-4px);}
+.valor-card h4{font-size:1rem;color:var(--brand-deep);margin:0 0 8px;}
+.valor-card p{font-size:0.87rem;color:var(--text-muted);}
+@media(max-width:1000px){.valores-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:620px){.valores-grid{grid-template-columns:1fr;}}
+
+/* Organigrama */
+.organigrama{display:flex;flex-direction:column;align-items:center;}
+.org-nivel{background:var(--brand-deep);color:#FBF6E9;font-weight:700;font-size:0.95rem;padding:12px 26px;border-radius:999px;text-align:center;box-shadow:0 10px 22px rgba(31,68,48,0.18);}
+.org-nivel.principal{background:var(--accent);}
+.org-linea{width:2px;height:26px;background:var(--brand);opacity:.5;}
+.org-direcciones{display:grid;grid-template-columns:repeat(var(--cols,3),1fr);gap:22px;width:100%;position:relative;padding-top:26px;}
+.org-direcciones::before{content:"";position:absolute;top:0;left:calc(100% / var(--cols,3) / 2);right:calc(100% / var(--cols,3) / 2);height:2px;background:var(--brand);opacity:.5;}
+.org-direccion{position:relative;display:flex;flex-direction:column;gap:12px;}
+.org-direccion::before{content:"";position:absolute;top:-26px;left:50%;width:2px;height:26px;background:var(--brand);opacity:.5;}
+.org-direccion h4{background:var(--gold);color:var(--brand-deep);font-size:0.92rem;text-align:center;padding:12px 16px;border-radius:16px;margin:0;}
+.org-area{background:var(--surface);border:1.5px solid rgba(63,133,87,0.35);border-radius:16px;padding:14px 18px;}
+.org-area b{display:block;color:var(--brand-deep);font-size:0.9rem;}
+.org-area ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;}
+.org-area b + ul{margin-top:8px;}
+.org-area li{font-size:0.86rem;color:var(--text-muted);}
+.org-area ul:first-child{margin-top:0;}
+@media(max-width:820px){
+  .org-direcciones{grid-template-columns:1fr;}
+  .org-direcciones::before{display:none;}
+  .org-direccion::before{display:none;}
+}
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:14px;}
+.faq details{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:0 22px;transition:box-shadow .2s ease;}
+.faq details[open]{box-shadow:var(--shadow);}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:700;color:var(--brand-deep);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary svg{flex-shrink:0;transition:transform .2s ease;color:var(--accent);}
+.faq details[open] summary svg{transform:rotate(180deg);}
+.faq .rich{padding:0 0 22px;color:var(--text-muted);}
+
+/* ---------- Cómo ayudar ---------- */
+.formas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+.forma-card{background:var(--surface);border-radius:16px;padding:30px 24px 26px;text-align:center;box-shadow:0 12px 26px rgba(31,68,48,0.10);display:block;}
+.forma-card h4{font-size:1.02rem;color:var(--brand-deep);margin:0 0 8px;}
+.forma-card p{font-size:0.9rem;color:var(--text-muted);}
+.forma-card .noticia-link{justify-content:center;}
+.donaciones{max-width:820px;margin:0 auto;}
+
+/* ---------- Política de datos ---------- */
+.legal{max-width:820px;margin:0 auto;}
+.legal-fecha{font-size:0.85rem;color:var(--text-muted);margin-bottom:24px;}
