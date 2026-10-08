@@ -9,8 +9,9 @@ export const SITE_NAME = "Asoproyuja";
 export const NOMBRE_LEGAL = "ASOPROYUJA — Asociación Agropecuaria Campesina Nacional";
 export const NIT = "825.001.418-2";
 
-/** Imagen para compartir en redes cuando la página no tiene una propia (1200×630). */
-export const OG_DEFAULT = "/assets/img/og-asoproyuja.jpg";
+/** Imagen para compartir en redes: el logo en formato cuadrado (1200×1200), que se ve bien en todas las redes.
+ *  Las noticias usan su propia foto. */
+export const OG_DEFAULT = "/assets/img/compartir-asoproyuja.jpg";
 export const LOGO = "/assets/img/logo-asoproyuja.png";
 
 /** Convierte rutas relativas (/assets/…, /wp-content/…) en URL absolutas del sitio. */
@@ -45,8 +46,11 @@ type Opciones = {
 export function metadatos({ seo, ruta, absoluto, imagen, noindex, tipo = "website", publicado, modificado }: Opciones): Metadata {
   const titulo = seo.titulo || SITE_NAME;
   const descripcion = resumen(seo.descripcion || "");
-  const img = absoluta(seo.imagen || imagen || OG_DEFAULT);
+  const propia = seo.imagen || imagen;
+  const img = absoluta(propia || OG_DEFAULT);
   const url = absoluta(ruta === "/" ? "" : ruta);
+  // Logo cuadrado → tarjeta "summary" (miniatura cuadrada); foto propia (noticias) → tarjeta grande
+  const tarjeta = propia ? "summary_large_image" : "summary";
   return {
     title: absoluto ? { absolute: titulo } : titulo,
     description: descripcion,
@@ -59,10 +63,10 @@ export function metadatos({ seo, ruta, absoluto, imagen, noindex, tipo = "websit
       locale: "es_CO",
       title: titulo,
       description: descripcion,
-      images: [{ url: img, alt: titulo }],
+      images: [propia ? { url: img, alt: titulo } : { url: img, width: 1200, height: 1200, alt: SITE_NAME }],
       ...(tipo === "article" ? { publishedTime: publicado, modifiedTime: modificado || publicado } : {}),
     },
-    twitter: { card: "summary_large_image", title: titulo, description: descripcion, images: [img] },
+    twitter: { card: tarjeta, title: titulo, description: descripcion, images: [img] },
   };
 }
 

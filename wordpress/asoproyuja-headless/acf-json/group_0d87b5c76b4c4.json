@@ -370,7 +370,7 @@
           "label": "Imagen al compartir en redes (opcional)",
           "name": "imagen",
           "type": "image",
-          "instructions": "1200 × 630 px. Si se deja vacía se usa la imagen general del sitio.",
+          "instructions": "Déjela vacía para usar el logo (recomendado). Si carga una, que sea de 1200 × 630 px. Las noticias usan su imagen destacada.",
           "required": 0,
           "conditional_logic": 0,
           "wrapper": {

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   publisher: SITE_NAME,
   formatDetection: { telephone: false, address: false, email: false },
   openGraph: { type: "website", locale: "es_CO", siteName: SITE_NAME, images: [OG_DEFAULT] },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary" },
   category: "nonprofit",
 };
 

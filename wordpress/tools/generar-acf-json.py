@@ -128,7 +128,7 @@ def seo():
             area("Descripción para Google", "descripcion", rows=2, maxlength=170,
                  instructions="Texto gris bajo el título en Google. Ideal: 140 a 160 caracteres, que invite a hacer clic."),
             image("Imagen al compartir en redes (opcional)", "imagen",
-                  instructions="1200 × 630 px. Si se deja vacía se usa la imagen general del sitio."),
+                  instructions="Déjela vacía para usar el logo (recomendado). Si carga una, que sea de 1200 × 630 px. Las noticias usan su imagen destacada."),
         ], instructions="Si un campo se deja vacío se usa el texto aprobado por defecto."),
     ]
 

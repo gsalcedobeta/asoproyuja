@@ -382,9 +382,10 @@ Para revisar qué entrega WordPress: `https://cms.asoproyuja.org/wp-json/wp/v2/p
 
 ### Metadatos (lo que muestra Google y las redes al compartir)
 
-- Cada página tiene en WordPress una pestaña **SEO (Google y redes)** con título (50–60 caracteres), descripción (140–160) e imagen para compartir (1200 × 630). Vacíos = los textos por defecto de `content/sitio.ts`.
-- Las noticias usan su título, el "Resumen de la tarjeta" y su foto destacada.
-- Se generan automáticamente: URL canónica, Open Graph y Twitter Card, idioma `es-CO`, `theme-color`, manifest e iconos (`app/icon.png`, `app/apple-icon.png`, `app/favicon.ico`). Imagen general para compartir: `public/assets/img/og-asoproyuja.jpg`.
+- Cada página tiene en WordPress una pestaña **SEO (Google y redes)** con título (50–60 caracteres), descripción (140–160) e imagen opcional para compartir. Vacíos = los textos por defecto de `content/sitio.ts`.
+- **Imagen al compartir:** el logo en formato cuadrado (`public/assets/img/compartir-asoproyuja.jpg`, 1200 × 1200), que se ve bien en WhatsApp, Facebook, LinkedIn y X.
+- **Noticias:** al compartirlas muestran su título, el "Resumen de la tarjeta" y su foto destacada, en tarjeta grande.
+- Se generan automáticamente: URL canónica, Open Graph y Twitter Card, idioma `es-CO`, `theme-color`, manifest e iconos (`app/icon.png`, `app/apple-icon.png`, `app/favicon.ico`).
 - Todo está en `lib/seo.ts`.
 
 ### Datos estructurados (schema.org)

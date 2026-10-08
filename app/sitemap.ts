@@ -3,7 +3,7 @@
 // Las páginas en "Muy pronto" se agregan solas cuando tengan contenido.
 import type { MetadataRoute } from "next";
 import { getComoAyudar, getFechasPaginas, getInicio, getNoticias, getPreguntasFrecuentes } from "@/lib/cms";
-import { absoluta, OG_DEFAULT, SITE_URL } from "@/lib/seo";
+import { absoluta, SITE_URL } from "@/lib/seo";
 
 export const revalidate = 3600;
 
@@ -33,7 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const paginas: Entrada[] = [
     pagina("/", "inicio", 1, "weekly", [...inicio.slides.map((s) => s.imagen), inicio.bienvenida.imagen], ultimaNoticia),
-    pagina("/quienes-somos", "quienes-somos", 0.9, "monthly", [OG_DEFAULT]),
+    pagina("/quienes-somos", "quienes-somos", 0.9, "monthly"),
     pagina("/noticias", "noticias", 0.8, "weekly", [], ultimaNoticia),
     pagina("/contacto", "contacto", 0.7, "yearly"),
     pagina("/politica-de-datos", "politica-de-datos", 0.2, "yearly"),
