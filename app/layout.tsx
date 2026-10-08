@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { ReactNode } from "react";
 import { Analytics, AnalyticsNoScript } from "@/components/Analytics";
 import { BotonFlotante, Footer } from "@/components/Footer";
@@ -53,6 +55,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <BotonFlotante boton={ajustes.boton_flotante} />
         <Reveal />
         <Analytics />
+        {/* Vercel: visitas sin cookies y velocidad real de los visitantes (Core Web Vitals). Solo envían datos en Vercel. */}
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );

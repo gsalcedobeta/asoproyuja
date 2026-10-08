@@ -410,6 +410,12 @@ Para revisar qué entrega WordPress: `https://cms.asoproyuja.org/wp-json/wp/v2/p
 - Cabeceras de seguridad: `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`.
 - Lighthouse en móvil (antes de salir al aire): rendimiento 93–98, SEO 100, buenas prácticas 100, accesibilidad 91–98. Las observaciones de accesibilidad que quedan son del diseño aprobado (contraste del enlace verde "Escríbenos" 4,46:1, tamaño de los puntos del slider y el orden h4/h5 de tarjetas y pie).
 
+### Vercel Web Analytics y Speed Insights
+
+- `@vercel/analytics` (visitas y páginas más vistas, sin cookies) y `@vercel/speed-insights` (velocidad real de los visitantes: LCP, INP, CLS) están en `app/layout.tsx`.
+- Se activan en el panel de Vercel → proyecto → **Analytics → Enable** y **Speed Insights → Enable**. Solo envían datos desde Vercel (no en local).
+- En el plan Hobby: 50.000 eventos/mes de Analytics, suficiente para este sitio.
+
 ### Google Tag Manager y Google Analytics 4
 
 - `components/Analytics.tsx` carga GTM (`GTM-K9H7CCQT`, con su `noscript`) y GA4 (`G-0ZYNYKJ7X6`) después de que la página es interactiva, sin frenar la carga.
