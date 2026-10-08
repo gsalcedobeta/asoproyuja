@@ -207,7 +207,7 @@ Redirecciones (`next.config.ts`): `/atencion-al-ciudadano` → `/contacto` (es l
 | Registra las plantillas de página "Asoproyuja: …", que activan cada grupo de campos | `includes/contenido.php` |
 | Crea la página de opciones **Ajustes del sitio** y el endpoint `GET /wp-json/asoproyuja/v1/ajustes` | `includes/contenido.php` |
 | Registra las ubicaciones de menú **Menú principal**, **Pie de página: Navegación** y **Pie de página: Enlaces**, y el endpoint `GET /wp-json/asoproyuja/v1/menus` | `includes/contenido.php` |
-| Redirige al sitio público a quien visite WordPress sin sesión iniciada: cada página o noticia a su dirección en el sitio y lo demás al inicio. `cms.asoproyuja.org` solo sirve para entrar a `/wp-admin` y para la API | `includes/contenido.php` |
+| Redirige al sitio público a todo visitante (también con sesión iniciada): cada página o noticia a su dirección en el sitio y lo demás al inicio. `cms.asoproyuja.org` solo sirve para entrar a `/wp-admin` y para la API | `includes/contenido.php` |
 | Recibe el formulario de contacto en `POST /wp-json/asoproyuja/v1/mensajes` y el newsletter en `POST /wp-json/asoproyuja/v1/suscriptores` (cabecera `X-Asoproyuja-Secret`), guarda **Mensajes** y **Suscriptores** privados y envía el correo de aviso | `includes/formularios.php` |
 | Avisa a Vercel (`/api/revalidate`) al guardar; agrega el botón "↻ Actualizar sitio" en la barra del administrador | `includes/publicacion.php` |
 | Bloquea el CMS para el público: `noindex` en todo, `robots.txt` con `Disallow: /`, sin sitemap de WordPress, sin XML-RPC, lista de usuarios de la API solo con sesión iniciada, login sin pistas y fotos reducidas a 1920 px al subirlas | `includes/seguridad.php` |

@@ -191,7 +191,9 @@ add_action( 'wp_update_nav_menu', 'asoproyuja_revalidar' );
 add_action(
 	'template_redirect',
 	function () {
-		if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) || is_preview() || is_robots() || is_user_logged_in() ) {
+		// Siempre al sitio público, también con sesión iniciada: el CMS solo sirve para /wp-admin y la API.
+		// (Las vistas previas del tema de WordPress no muestran el diseño real; "Vista previa" lleva a la página publicada.)
+		if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) || is_robots() ) {
 			return;
 		}
 		// Páginas y noticias → su dirección en el sitio; lo que solo existe en WordPress
