@@ -187,7 +187,8 @@ function asoproyuja_crear_mensaje( WP_REST_Request $req ) {
 			$filas .= '<tr><td style="padding:4px 12px 4px 0;color:#65705A">' . esc_html( $k ) . '</td><td><strong>' . esc_html( $v ) . '</strong></td></tr>';
 		}
 	}
-	asoproyuja_enviar(
+	// El mensaje ya quedó guardado; el correo es solo un aviso. Se registra si salió (útil para revisar el SMTP).
+	$enviado = asoproyuja_enviar(
 		asoproyuja_correo_destino(),
 		'Nuevo mensaje desde asoproyuja.org' . ( $d['asunto'] ? ': ' . $d['asunto'] : '' ),
 		asoproyuja_correo_html(
@@ -199,6 +200,7 @@ function asoproyuja_crear_mensaje( WP_REST_Request $req ) {
 		),
 		$d['correo']
 	);
+	update_post_meta( $post_id, '_asoproyuja_aviso', $enviado ? 'Enviado' : 'Falló el envío' );
 
 	return new WP_REST_Response( array( 'ok' => true ), 201 );
 }
@@ -251,6 +253,7 @@ add_filter(
 			'title'    => 'Mensaje',
 			'correo'   => 'Correo',
 			'telefono' => 'Teléfono',
+			'aviso'    => 'Correo de aviso',
 			'date'     => 'Fecha',
 		);
 	}
@@ -261,6 +264,11 @@ add_action(
 	function ( $col, $post_id ) {
 		if ( in_array( $col, array( 'correo', 'telefono' ), true ) ) {
 			echo esc_html( asoproyuja_meta( $post_id, $col ) );
+		}
+		if ( 'aviso' === $col ) {
+			$v = asoproyuja_meta( $post_id, 'aviso' );
+			$color = 'Enviado' === $v ? '#2e7d32' : ( $v ? '#c62828' : '#787c82' );
+			echo '<span style="color:' . esc_attr( $color ) . '">' . esc_html( $v ?: '—' ) . '</span>';
 		}
 	},
 	10,
@@ -281,6 +289,7 @@ function asoproyuja_metabox_mensaje( $post ) {
 		'telefono'           => 'Teléfono',
 		'asunto'             => 'Asunto',
 		'autorizacion_datos' => 'Autorizó tratamiento de datos',
+		'aviso'              => 'Correo de aviso',
 	);
 	echo '<table class="widefat striped" style="margin-bottom:16px"><tbody>';
 	foreach ( $etiquetas as $k => $label ) {
@@ -307,6 +316,62 @@ add_filter(
 			'title' => 'Correo',
 			'date'  => 'Fecha de suscripción',
 		);
+	}
+);
+
+/* Botón "Exportar CSV" en el listado de mensajes */
+add_action(
+	'admin_notices',
+	function () {
+		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+		if ( ! $screen || 'edit-mensaje' !== $screen->id ) {
+			return;
+		}
+		$url = wp_nonce_url( admin_url( 'admin-post.php?action=asoproyuja_exportar_mensajes' ), 'asoproyuja_exportar' );
+		echo '<div class="notice notice-info"><p>Cada envío del formulario de Contacto queda guardado aquí, aunque el correo de aviso falle. <a class="button button-primary" style="margin-left:8px" href="' . esc_url( $url ) . '">Exportar CSV</a></p></div>';
+	}
+);
+
+add_action(
+	'admin_post_asoproyuja_exportar_mensajes',
+	function () {
+		check_admin_referer( 'asoproyuja_exportar' );
+		if ( ! current_user_can( 'edit_pages' ) ) {
+			wp_die( 'No autorizado' );
+		}
+		$ids = get_posts(
+			array(
+				'post_type'   => 'mensaje',
+				'post_status' => 'any',
+				'numberposts' => -1,
+				'fields'      => 'ids',
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+			)
+		);
+		nocache_headers();
+		header( 'Content-Type: text/csv; charset=UTF-8' );
+		header( 'Content-Disposition: attachment; filename=mensajes-contacto-asoproyuja-' . gmdate( 'Y-m-d' ) . '.csv' );
+		$out = fopen( 'php://output', 'w' );
+		fwrite( $out, "\xEF\xBB\xBF" ); // BOM para que Excel lea las tildes
+		fputcsv( $out, array( 'fecha', 'nombre', 'correo', 'telefono', 'asunto', 'mensaje', 'autorizacion_datos', 'correo_de_aviso' ) );
+		foreach ( $ids as $id ) {
+			fputcsv(
+				$out,
+				array(
+					get_the_date( 'Y-m-d H:i', $id ),
+					asoproyuja_meta( $id, 'nombre' ),
+					asoproyuja_meta( $id, 'correo' ),
+					asoproyuja_meta( $id, 'telefono' ),
+					asoproyuja_meta( $id, 'asunto' ),
+					asoproyuja_meta( $id, 'mensaje' ),
+					asoproyuja_meta( $id, 'autorizacion_datos' ),
+					asoproyuja_meta( $id, 'aviso' ),
+				)
+			);
+		}
+		fclose( $out );
+		exit;
 	}
 );
 

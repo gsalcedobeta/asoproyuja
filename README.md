@@ -274,6 +274,16 @@ Cada página se identifica por su **slug** y usa una **plantilla**, que es la qu
 2. `app/api/contacto/route.ts` valida los datos y los reenvía a WordPress con la cabecera `X-Asoproyuja-Secret`.
 3. El plugin crea un **Mensaje** privado y guarda la fecha y hora de la autorización como prueba (art. 9 de la Ley 1581). Máximo 5 mensajes por hora por correo.
 4. Envía un correo HTML de aviso al "Correo que recibe los mensajes del formulario" (Ajustes del sitio), con **Reply-To** del visitante: se responde directamente desde el correo.
+5. El mensaje queda guardado **aunque el correo falle**. La columna "Correo de aviso" del listado indica si salió ("Enviado" o "Falló el envío"), y **Mensajes → Exportar CSV** descarga todos los envíos (fecha, nombre, correo, teléfono, asunto, mensaje, fecha de autorización y estado del aviso).
+
+### Correo (SMTP con Brevo)
+
+WordPress envía los avisos con el plugin **Post SMTP** usando Brevo:
+
+- **Opción API (recomendada):** en Post SMTP elegir *Brevo* y pegar una **clave API v3**: Brevo → SMTP y API → pestaña **Claves API** → Generar. Empieza por `xkeysib-`. **No** sirve la "clave SMTP" (`xsmtpsib-…`): con esa, Brevo responde `401 Key not found`.
+- **Opción SMTP:** servidor `smtp-relay.brevo.com`, puerto `587`, TLS. Usuario: el *login* que muestra Brevo en la pestaña SMTP (termina en `@smtp-brevo.com`). Contraseña: la clave SMTP (`xsmtpsib-…`).
+- **Remitente:** `contacto@asoproyuja.org` (verificado en Brevo, con DKIM y DMARC del dominio). Activar "forzar remitente" en Post SMTP para que todos los correos salgan con esa dirección.
+- Si Brevo tiene activado **Seguridad → IP autorizadas**, agregar la IP del servidor de SiteGround o desactivar esa restricción.
 
 ### Newsletter (Inicio)
 

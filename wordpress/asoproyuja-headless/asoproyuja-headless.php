@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Asoproyuja Headless
  * Description: Convierte WordPress en el administrador de contenido del sitio asoproyuja.org (Next.js en Vercel): noticias, campos ACF por secciones, menús, mensajes de contacto, suscriptores del newsletter, publicación instantánea e importación del contenido inicial.
- * Version:     1.1.0
+ * Version:     1.2.0
  * Author:      WeDoo.digital
  * Requires PHP: 7.4
  * Text Domain: asoproyuja-headless
