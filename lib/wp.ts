@@ -1,4 +1,6 @@
 // Cliente mínimo de la API REST de WordPress (headless).
+import { SITE_URL } from "@/lib/seo";
+
 // Si WP_URL no está definido, todas las funciones devuelven null y el sitio
 // usa el contenido local de /content.
 
@@ -11,8 +13,6 @@ export function claveEntorno(nombre: string): string {
 
 export const wpEnabled = WP_URL.length > 0;
 
-/** URL pública del sitio (sin barra final). */
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://asoproyuja.org").trim().replace(/\/+$/, "");
 
 /** Segundos entre regeneraciones automáticas. WordPress además avisa al guardar (ver /api/revalidate). */
 export const REVALIDATE_SECONDS = 600;
@@ -94,6 +94,8 @@ export function localizeUrl(url: string): string {
   if (SITE_URL && (url === SITE_URL || url.startsWith(SITE_URL + "/"))) return url.slice(SITE_URL.length).replace(/\/+(?=$|[?#])/, "") || "/";
   if (!wpEnabled || !url.startsWith(WP_URL)) return url;
   const rest = url.slice(WP_URL.length);
+  // Las imágenes subidas se sirven desde el propio dominio (proxy en next.config.ts → rewrites)
+  if (rest.startsWith("/wp-content/uploads/")) return rest;
   if (rest.startsWith("/wp-content/")) return url;
   const path = rest.replace(/\/+(?=$|[?#])/, "") || "/";
   return path.startsWith("/") ? path : `/${path}`;
@@ -101,5 +103,8 @@ export function localizeUrl(url: string): string {
 
 export function localizeHtml(html: string): string {
   if (!wpEnabled) return html;
-  return html.replace(/href="([^"]+)"/g, (_, href: string) => `href="${localizeUrl(href)}"`);
+  return html
+    .replace(/href="([^"]+)"/g, (_, href: string) => `href="${localizeUrl(href)}"`)
+    .replace(/src="([^"]+)"/g, (_, src: string) => `src="${localizeUrl(src)}"`)
+    .replace(/srcset="([^"]+)"/g, (_, set: string) => `srcset="${set.split(WP_URL + "/wp-content/uploads/").join("/wp-content/uploads/")}"`);
 }

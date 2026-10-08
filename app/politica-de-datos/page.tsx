@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { Html, PageHero } from "@/components/Blocks";
 import { getPoliticaDatos } from "@/lib/cms";
 import { fechaLarga } from "@/lib/format";
 
 export const revalidate = 600;
-export const metadata: Metadata = {
-  title: "Política de tratamiento de datos",
-  description: "Política de tratamiento de datos personales de Asoproyuja (Ley 1581 de 2012).",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return metadatos({ seo: (await getPoliticaDatos()).seo, ruta: "/politica-de-datos" });
+}
 
 export default async function PoliticaDatosPage() {
   const d = await getPoliticaDatos();

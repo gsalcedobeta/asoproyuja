@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import { metadatos, schemaPreguntas } from "@/lib/seo";
 import { CtaPanel, Html, PageHero, ProximamenteBloque, SectionHead } from "@/components/Blocks";
 import { Icon } from "@/components/Icon";
 import { getPreguntasFrecuentes } from "@/lib/cms";
 
 export const revalidate = 600;
-export const metadata: Metadata = {
-  title: "Preguntas frecuentes",
-  description: "Respuestas a las preguntas más comunes sobre los programas de Asoproyuja.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const d = await getPreguntasFrecuentes();
+  const vacia = !(d.preguntas || []).some((p) => p.pregunta);
+  // Mientras esté en "Muy pronto" no se indexa (contenido escaso); se indexa sola al cargar preguntas
+  return metadatos({ seo: d.seo, ruta: "/preguntas-frecuentes", noindex: vacia });
+}
 
 export default async function PreguntasFrecuentesPage() {
   const d = await getPreguntasFrecuentes();
@@ -16,6 +20,7 @@ export default async function PreguntasFrecuentesPage() {
   return (
     <>
       <PageHero migas={[{ title: "Preguntas frecuentes" }]} eyebrow={d.hero.eyebrow} titulo={d.hero.titulo} texto={d.hero.texto} />
+      {preguntas.length > 0 && <JsonLd data={schemaPreguntas(preguntas)} />}
       {preguntas.length === 0 ? (
         <ProximamenteBloque d={d.proximamente} />
       ) : (

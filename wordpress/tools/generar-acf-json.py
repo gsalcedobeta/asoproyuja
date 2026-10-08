@@ -119,6 +119,20 @@ def cta():
     )
 
 
+def seo():
+    return [
+        tab("SEO (Google y redes)"),
+        group("SEO", "seo", [
+            text("Título para Google", "titulo", maxlength=65,
+                 instructions="Lo que aparece en azul en los resultados de Google. Ideal: 50 a 60 caracteres. Se le agrega « | Asoproyuja» (excepto en el Inicio)."),
+            area("Descripción para Google", "descripcion", rows=2, maxlength=170,
+                 instructions="Texto gris bajo el título en Google. Ideal: 140 a 160 caracteres, que invite a hacer clic."),
+            image("Imagen al compartir en redes (opcional)", "imagen",
+                  instructions="1200 × 630 px. Si se deja vacía se usa la imagen general del sitio."),
+        ], instructions="Si un campo se deja vacío se usa el texto aprobado por defecto."),
+    ]
+
+
 def proximamente():
     return group(
         "Bloque «Muy pronto»",
@@ -279,7 +293,7 @@ grupo(
             area("Texto", "texto", rows=2),
             link("Botón", "boton", width=50), image("Mascota", "mascota", width=50),
         ]),
-    ],
+    ] + seo(),
     plantilla("asoproyuja-inicio"),
 )
 
@@ -319,7 +333,7 @@ grupo(
             ], boton="Agregar dirección"),
         ]),
         tab("Llamado a la acción"), cta(),
-    ],
+    ] + seo(),
     plantilla("asoproyuja-quienes-somos"),
 )
 
@@ -332,7 +346,7 @@ grupo(
         number("Noticias por página", "por_pagina", default_value=9, min=3, max=30),
         text("Mensaje cuando no hay noticias", "mensaje_vacio"),
         tab("Llamado a la acción"), cta(),
-    ],
+    ] + seo(),
     plantilla("asoproyuja-noticias"),
     descripcion="Las noticias se crean en el menú Noticias.",
 )
@@ -350,7 +364,7 @@ grupo(
               instructions="Los mensajes llegan al menú Mensajes y al correo configurado en Ajustes del sitio."),
         tab("Mapa"),
         group("Mapa", "mapa", encabezado(), instructions="La URL del mapa se configura en Ajustes del sitio."),
-    ],
+    ] + seo(),
     plantilla("asoproyuja-contacto"),
 )
 
@@ -365,7 +379,7 @@ grupo(
         repeater("Preguntas", "preguntas", [text("Pregunta", "pregunta"), wysiwyg("Respuesta", "respuesta")],
                  boton="Agregar pregunta", instructions="Mientras no haya preguntas, la página muestra el bloque «Muy pronto»."),
         tab("Llamado a la acción"), cta(),
-    ],
+    ] + seo(),
     plantilla("asoproyuja-preguntas-frecuentes"),
 )
 
@@ -385,7 +399,7 @@ grupo(
         tab("Donaciones"),
         group("Datos para donar", "donaciones", encabezado() + [wysiwyg("Contenido (cuentas, Nequi, etc.)", "contenido")]),
         tab("Llamado a la acción"), cta(),
-    ],
+    ] + seo(),
     plantilla("asoproyuja-como-ayudar"),
 )
 
@@ -397,7 +411,7 @@ grupo(
         tab("Contenido"),
         date("Última actualización", "actualizado"),
         wysiwyg("Texto de la política", "contenido"),
-    ],
+    ] + seo(),
     plantilla("asoproyuja-politica-datos"),
 )
 

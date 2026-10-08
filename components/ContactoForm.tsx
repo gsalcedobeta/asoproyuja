@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
+import { evento } from "@/components/Analytics";
 import type { Texto } from "@/lib/types";
 
 type Estado = { tipo: "idle" | "enviando" | "ok" | "error"; mensaje?: string };
@@ -23,6 +24,7 @@ export function ContactoForm({ asuntos, telefono }: { asuntos: Texto[]; telefono
       });
       const json = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(json.error || "No fue posible enviar tu mensaje.");
+      evento("generate_lead", { formulario: "contacto", asunto: String(datos.asunto || "") });
       form.reset();
       setEstado({ tipo: "ok", mensaje: "¡Gracias! Recibimos tu mensaje y te responderemos pronto." });
     } catch (err) {

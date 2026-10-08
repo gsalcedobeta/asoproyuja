@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ListadoNoticias } from "@/components/ListadoNoticias";
-import { getPaginaNoticias } from "@/lib/cms";
+import { getNoticiasPagina, getPaginaNoticias } from "@/lib/cms";
+import { metadatos } from "@/lib/seo";
 
 export const revalidate = 600;
 
@@ -13,7 +14,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  return { title: `Noticias — página ${(await params).n}` };
+  const n = (await params).n;
+  const seo = (await getNoticiasPagina()).seo;
+  return metadatos({ seo: { ...seo, titulo: `${seo.titulo} — página ${n}` }, ruta: `/noticias/pagina/${n}` });
 }
 
 export default async function NoticiasPaginaN({ params }: Params) {

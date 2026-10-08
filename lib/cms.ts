@@ -95,7 +95,8 @@ function mapNoticia(p: WpPage): Noticia {
     slug: p.slug,
     titulo,
     fecha: p.date.slice(0, 10),
-    imagen: media?.source_url || "/assets/img/hero-comunidad.jpg",
+    modificado: (p.modified || p.date).slice(0, 19),
+    imagen: media?.source_url ? localizeUrl(media.source_url) : "/assets/img/hero-comunidad.jpg",
     imagen_alt: media?.alt_text || titulo,
     extracto: (acf.extracto as string) || stripTags(p.excerpt?.rendered || ""),
     contenido: localizeHtml(p.content.rendered),
@@ -124,3 +125,10 @@ export async function getPaginaNoticias(pagina: number) {
     existe: pagina >= 1 && pagina <= total,
   };
 }
+
+// ---------------- Fechas para el sitemap ----------------
+/** Fecha de última modificación de cada página de WordPress (slug → ISO). Vacío sin WordPress. */
+export const getFechasPaginas = cache(async (): Promise<Record<string, string>> => {
+  const pages = await wpFetch<{ slug: string; modified: string }[]>("/wp/v2/pages?per_page=50&_fields=slug,modified");
+  return Object.fromEntries((pages || []).map((p) => [p.slug, p.modified]));
+});

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { evento } from "@/components/Analytics";
 import type { Inicio } from "@/lib/types";
 
 type Estado = "idle" | "enviando" | "ok" | "error";
@@ -24,6 +25,7 @@ export function NewsletterForm({ d }: { d: Inicio["newsletter"] }) {
       });
       const json = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(json.error || "No fue posible registrar tu correo.");
+      evento("sign_up", { formulario: "newsletter" });
       form.reset();
       setEstado("ok");
     } catch (err) {

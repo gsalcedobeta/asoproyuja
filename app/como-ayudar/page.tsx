@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { CtaPanel, Html, PageHero, ProximamenteBloque, SectionHead } from "@/components/Blocks";
 import { IconoCirculo } from "@/components/Icon";
 import { SmartLink } from "@/components/SmartLink";
 import { getComoAyudar } from "@/lib/cms";
 
 export const revalidate = 600;
-export const metadata: Metadata = {
-  title: "Cómo ayudar",
-  description: "Voluntariado, alianzas y donaciones para apoyar a la niñez y las familias con Asoproyuja.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const d = await getComoAyudar();
+  const vacia = !(d.formas || []).some((f) => f.titulo) && !d.donaciones?.contenido;
+  // Mientras esté en "Muy pronto" no se indexa (contenido escaso); se indexa sola al cargar contenido
+  return metadatos({ seo: d.seo, ruta: "/como-ayudar", noindex: vacia });
+}
 
 export default async function ComoAyudarPage() {
   const d = await getComoAyudar();

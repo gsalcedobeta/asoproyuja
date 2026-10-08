@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Icon } from "@/components/Icon";
 import type { Reel } from "@/lib/types";
+import { optimizada } from "@/lib/imagen";
 
 function ReelCard({ r, hidden }: { r: Reel; hidden?: boolean }) {
   return (
@@ -14,7 +15,7 @@ function ReelCard({ r, hidden }: { r: Reel; hidden?: boolean }) {
       title={r.titulo}
       {...(hidden ? { "aria-hidden": true, tabIndex: -1 } : { "aria-label": `Ver reel en Instagram: ${r.titulo}` })}
     >
-      <img className="reel-cover" src={r.portada} alt="" />
+      <img className="reel-cover" {...optimizada(r.portada, "(max-width: 620px) 62vw, 220px", 828)} alt="" loading="lazy" decoding="async" />
       <span className="reel-ig-badge">
         <Icon name="instagram" size={14} />
       </span>

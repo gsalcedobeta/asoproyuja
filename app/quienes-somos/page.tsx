@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import type { CSSProperties } from "react";
 import { CtaPanel, Eyebrow, Html, PageHero, SectionHead } from "@/components/Blocks";
 import { IconoCirculo } from "@/components/Icon";
@@ -6,10 +7,9 @@ import { Piezas } from "@/components/Piezas";
 import { getQuienesSomos } from "@/lib/cms";
 
 export const revalidate = 600;
-export const metadata: Metadata = {
-  title: "Quiénes somos",
-  description: "Quiénes somos, misión, visión, valores, áreas de intervención y organigrama de Asoproyuja.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return metadatos({ seo: (await getQuienesSomos()).seo, ruta: "/quienes-somos" });
+}
 
 export default async function QuienesSomosPage() {
   const d = await getQuienesSomos();

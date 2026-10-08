@@ -27,6 +27,9 @@ export type ColorIcono = "verde" | "amarillo";
 
 export type Texto = { texto: string };
 
+/** Pestaña "SEO" de cada página: título y descripción para Google y redes; imagen al compartir (1200×630). */
+export type Seo = { titulo: string; descripcion: string; imagen: string };
+
 // ---------- Ajustes globales (página de opciones "Ajustes del sitio") ----------
 export type Ajustes = {
   /** Dirección; cada línea se muestra en un renglón. */
@@ -74,6 +77,7 @@ export type Aliado = { nombre: string; logo: string; url?: string };
 export type Reel = { url: string; portada: string; titulo: string };
 
 export type Inicio = {
+  seo: Seo;
   slides: Slide[];
   bienvenida: {
     imagen: string;
@@ -109,6 +113,7 @@ export type Inicio = {
 
 // ---------- Quiénes somos ----------
 export type QuienesSomos = {
+  seo: Seo;
   /** Encabezado verde; "contenido" es el texto de quiénes somos que va debajo del título. */
   hero: Encabezado & { contenido: string }; // HTML
   mision_vision: Encabezado & { mision: string; vision: string }; // HTML
@@ -127,6 +132,7 @@ export type QuienesSomos = {
 
 // ---------- Noticias ----------
 export type NoticiasPagina = {
+  seo: Seo;
   hero: Encabezado;
   por_pagina: number;
   mensaje_vacio: string;
@@ -137,6 +143,7 @@ export type Noticia = {
   slug: string;
   titulo: string;
   fecha: string; // ISO yyyy-mm-dd (ordena el listado; el diseño no muestra fechas)
+  modificado?: string; // ISO, para el sitemap y Google
   imagen: string;
   imagen_alt: string;
   extracto: string;
@@ -145,6 +152,7 @@ export type Noticia = {
 
 // ---------- Contacto (también "Atención al ciudadano") ----------
 export type Contacto = {
+  seo: Seo;
   hero: Encabezado;
   canales: Encabezado;
   formulario: Encabezado & { asuntos: Texto[] };
@@ -161,6 +169,7 @@ export type Proximamente = {
 };
 
 export type PreguntasFrecuentes = {
+  seo: Seo;
   hero: Encabezado;
   proximamente: Proximamente;
   intro: Encabezado;
@@ -169,6 +178,7 @@ export type PreguntasFrecuentes = {
 };
 
 export type ComoAyudar = {
+  seo: Seo;
   hero: Encabezado;
   proximamente: Proximamente;
   intro: Encabezado;
@@ -179,6 +189,7 @@ export type ComoAyudar = {
 
 // ---------- Política de datos ----------
 export type PoliticaDatos = {
+  seo: Seo;
   hero: Encabezado;
   contenido: string; // HTML
   actualizado: string; // yyyy-mm-dd

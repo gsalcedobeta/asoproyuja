@@ -1,5 +1,6 @@
 // Inicio. Reproduce el HTML del diseño aprobado (entregables/asoproyuja-home-propuesta.html)
 // con las mismas clases; los textos e imágenes vienen de WordPress (Página: Inicio).
+import type { Metadata } from "next";
 import { NoticiaCard } from "@/components/Blocks";
 import { Icon, IconoCirculo } from "@/components/Icon";
 import { NewsletterForm } from "@/components/NewsletterForm";
@@ -8,8 +9,15 @@ import { ReelsCarousel } from "@/components/ReelsCarousel";
 import { Slider } from "@/components/Slider";
 import { SmartLink } from "@/components/SmartLink";
 import { getInicio, getNoticias } from "@/lib/cms";
+import { optimizada } from "@/lib/imagen";
+import { metadatos } from "@/lib/seo";
 
 export const revalidate = 600;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const d = await getInicio();
+  return metadatos({ seo: d.seo, ruta: "/", absoluto: true });
+}
 
 export default async function InicioPage() {
   const [d, noticias] = await Promise.all([getInicio(), getNoticias()]);
@@ -30,7 +38,7 @@ export default async function InicioPage() {
         <div className="wrap bien-grid">
           <div className="bien-media reveal">
             <div className="mask-frame">
-              <img src={d.bienvenida.imagen} alt={d.bienvenida.imagen_alt} />
+              <img {...optimizada(d.bienvenida.imagen, "(max-width: 880px) 90vw, 440px", 1080)} alt={d.bienvenida.imagen_alt} />
             </div>
             <div className="bien-badge">
               <span className="bien-badge-num">{d.bienvenida.sello_numero}</span>
@@ -128,7 +136,7 @@ export default async function InicioPage() {
             </div>
             <div className="aliados-row reveal">
               {logos.map((l, i) => {
-                const img = <img src={l.logo} alt={l.nombre} />;
+                const img = <img {...optimizada(l.logo, "160px", 384)} alt={l.nombre} loading="lazy" decoding="async" />;
                 return l.url ? (
                   <a key={i} className="aliado-slot aliado-logo" href={l.url} target="_blank" rel="noopener" title={l.nombre}>
                     {img}
@@ -175,7 +183,7 @@ export default async function InicioPage() {
                 {d.apoyo.boton.title}
               </SmartLink>
             ) : null}
-            {d.apoyo.mascota ? <img className="dona-mascot" src={d.apoyo.mascota} alt="Mascota Asoproyuja" /> : null}
+            {d.apoyo.mascota ? <img className="dona-mascot" {...optimizada(d.apoyo.mascota, "(max-width: 900px) 110px, 290px", 640)} alt="Mascota Asoproyuja" loading="lazy" decoding="async" /> : null}
           </div>
         </div>
       </section>

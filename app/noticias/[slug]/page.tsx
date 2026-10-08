@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaPanel, Html, NoticiaCard, PageHero, SectionHead } from "@/components/Blocks";
+import { JsonLd } from "@/components/JsonLd";
 import { getNoticia, getNoticias, getNoticiasPagina } from "@/lib/cms";
+import { metadatos, schemaNoticia } from "@/lib/seo";
+import { optimizada } from "@/lib/imagen";
 
 export const revalidate = 600;
 
@@ -15,7 +18,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const n = await getNoticia((await params).slug);
   if (!n) return {};
-  return { title: n.titulo, description: n.extracto, openGraph: { images: [n.imagen] } };
+  return metadatos({
+    seo: { titulo: n.titulo, descripcion: n.extracto, imagen: n.imagen },
+    ruta: `/noticias/${n.slug}`,
+    tipo: "article",
+    publicado: n.fecha,
+    modificado: n.modificado,
+  });
 }
 
 export default async function NoticiaPage({ params }: Params) {
@@ -29,13 +38,14 @@ export default async function NoticiaPage({ params }: Params) {
 
   return (
     <>
-      <PageHero migas={[{ title: "Noticias", url: "/noticias" }, { title: "Noticia" }]} eyebrow="Noticias" titulo={n.titulo} />
+      <JsonLd data={schemaNoticia(n)} />
+      <PageHero migas={[{ title: "Noticias", url: "/noticias" }, { title: "Noticia" }]} eyebrow="Noticias" titulo={n.titulo} nombreSchema={n.titulo} />
 
       <section className="section tight">
         <div className="wrap">
           <article className="articulo">
             <div className="articulo-foto">
-              <img src={n.imagen} alt={n.imagen_alt} />
+              <img {...optimizada(n.imagen, "(max-width: 880px) 92vw, 820px", 1920)} alt={n.imagen_alt} fetchPriority="high" />
             </div>
             <Html html={n.contenido} className="rich" />
             <Link href="/noticias" className="volver">

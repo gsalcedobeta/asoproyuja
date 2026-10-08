@@ -38,6 +38,12 @@ const ctaApoyo = {
 };
 
 export const inicio: Inicio = {
+  seo: {
+    titulo: "Asoproyuja | Asociación Agropecuaria Campesina Nacional",
+    descripcion:
+      "Asoproyuja trabaja en Santa Marta por el bienestar de la niñez y las familias: primera infancia, seguridad alimentaria y desarrollo comunitario.",
+    imagen: "",
+  },
   slides: [
     {
       eyebrow: "Institucional",
@@ -183,6 +189,12 @@ export const inicio: Inicio = {
 };
 
 export const quienesSomos: QuienesSomos = {
+  seo: {
+    titulo: "Quiénes somos: misión, visión y valores",
+    descripcion:
+      "Conoce a Asoproyuja: más de 28 años con programas de intervención social, educación inicial y seguridad alimentaria para comunidades de Colombia.",
+    imagen: "",
+  },
   hero: {
     eyebrow: "Nosotros",
     titulo: "Quiénes somos",
@@ -314,6 +326,12 @@ export const quienesSomos: QuienesSomos = {
 };
 
 export const noticiasPagina: NoticiasPagina = {
+  seo: {
+    titulo: "Noticias y novedades",
+    descripcion:
+      "Jornadas, encuentros y logros de Asoproyuja con la niñez, las familias y las comunidades de Santa Marta y la región Caribe.",
+    imagen: "",
+  },
   hero: {
     eyebrow: "Noticias",
     titulo: "Lo último de nuestra comunidad",
@@ -325,6 +343,12 @@ export const noticiasPagina: NoticiasPagina = {
 };
 
 export const contacto: Contacto = {
+  seo: {
+    titulo: "Contacto y atención al ciudadano",
+    descripcion:
+      "Escríbenos o visítanos en la Calle 9 N. 19-42, Los Almendros, Santa Marta. Teléfonos (605) 422 9570 y 311 213 4787.",
+    imagen: "",
+  },
   hero: {
     eyebrow: "Atención al ciudadano",
     titulo: "Contacto",
@@ -351,6 +375,12 @@ export const contacto: Contacto = {
 };
 
 export const preguntasFrecuentes: PreguntasFrecuentes = {
+  seo: {
+    titulo: "Preguntas frecuentes",
+    descripcion:
+      "Respuestas sobre los programas de Asoproyuja para la primera infancia, las familias y las comunidades del territorio.",
+    imagen: "",
+  },
   hero: {
     eyebrow: "Preguntas frecuentes",
     titulo: "Resolvemos tus dudas",
@@ -375,6 +405,12 @@ export const preguntasFrecuentes: PreguntasFrecuentes = {
 };
 
 export const comoAyudar: ComoAyudar = {
+  seo: {
+    titulo: "Cómo ayudar: voluntariado, alianzas y donaciones",
+    descripcion:
+      "Súmate a Asoproyuja con voluntariado, alianzas o donaciones y ayuda a sembrar oportunidades para la niñez y las familias de Colombia.",
+    imagen: "",
+  },
   hero: {
     eyebrow: "Cómo ayudar",
     titulo: "Ayuda a sembrar más oportunidades",
@@ -400,6 +436,12 @@ export const comoAyudar: ComoAyudar = {
 };
 
 export const politicaDatos: PoliticaDatos = {
+  seo: {
+    titulo: "Política de tratamiento de datos personales",
+    descripcion:
+      "Política de tratamiento de datos personales de Asoproyuja (NIT 825.001.418-2), conforme a la Ley 1581 de 2012.",
+    imagen: "",
+  },
   hero: {
     eyebrow: "Ley 1581 de 2012",
     titulo: "Política de tratamiento de datos personales",

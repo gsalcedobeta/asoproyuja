@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { Eyebrow, PageHero, SectionHead } from "@/components/Blocks";
 import { ContactoForm } from "@/components/ContactoForm";
 import { Lineas } from "@/components/Footer";
@@ -6,10 +7,9 @@ import { Icon, IconoCirculo } from "@/components/Icon";
 import { getAjustes, getContacto } from "@/lib/cms";
 
 export const revalidate = 600;
-export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Atención al ciudadano de Asoproyuja: dirección, teléfonos y formulario de contacto.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return metadatos({ seo: (await getContacto()).seo, ruta: "/contacto" });
+}
 
 const tel = (n: string) => `tel:${n.replace(/[^\d+]/g, "")}`;
 

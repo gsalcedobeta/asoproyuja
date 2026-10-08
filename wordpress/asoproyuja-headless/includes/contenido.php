@@ -185,16 +185,28 @@ add_action(
 add_action( 'wp_update_nav_menu', 'asoproyuja_revalidar' );
 
 /* -------------------------------------------------------------------------
- * Headless: el front público de WordPress redirige al sitio en Vercel
+ * Headless: el front público de WordPress redirige al sitio en Vercel.
+ * cms.asoproyuja.org solo sirve para entrar al administrador (/wp-admin) y para la API.
  * ---------------------------------------------------------------------- */
 add_action(
 	'template_redirect',
 	function () {
-		if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) || is_preview() || is_user_logged_in() ) {
+		if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) || is_preview() || is_robots() || is_user_logged_in() ) {
 			return;
 		}
-		$path = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '/';
-		wp_redirect( asoproyuja_front_url() . $path, 301 );
+		// Páginas y noticias → su dirección en el sitio; lo que solo existe en WordPress
+		// (feeds, búsquedas, archivos por fecha/autor/categoría, adjuntos) → inicio; el resto conserva la ruta.
+		$ruta = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '/';
+		if ( is_singular( array( 'page', 'noticia' ) ) ) {
+			$destino = get_permalink( get_queried_object_id() ); // ya apunta al sitio (filtros de abajo)
+		} elseif ( is_post_type_archive( 'noticia' ) ) {
+			$destino = asoproyuja_front_url() . '/noticias';
+		} elseif ( is_feed() || is_search() || is_author() || is_date() || is_category() || is_tag() || is_attachment() ) {
+			$destino = asoproyuja_front_url() . '/';
+		} else {
+			$destino = asoproyuja_front_url() . strtok( $ruta, '?' );
+		}
+		wp_redirect( $destino, 301 );
 		exit;
 	}
 );

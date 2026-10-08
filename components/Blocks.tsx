@@ -2,8 +2,11 @@
 // (eyebrow, section-head, card-panel, noticia-card, bien-media…); lo nuevo está en extra.css.
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import { JsonLd } from "@/components/JsonLd";
 import { Pieza } from "@/components/Piezas";
 import { SmartLink } from "@/components/SmartLink";
+import { schemaMigas } from "@/lib/seo";
+import { optimizada } from "@/lib/imagen";
 import type { Cta, Noticia, Proximamente } from "@/lib/types";
 
 export type Miga = { title: string; url?: string };
@@ -24,6 +27,7 @@ export function PageHero({
   titulo,
   texto,
   contenido,
+  nombreSchema,
 }: {
   migas: Miga[];
   eyebrow: string;
@@ -31,9 +35,12 @@ export function PageHero({
   texto?: string;
   /** Texto adicional en HTML bajo el título (por ejemplo, en Quiénes somos). */
   contenido?: string;
+  /** Nombre del último paso de la ruta para Google, si difiere del visible (p. ej. el título de una noticia). */
+  nombreSchema?: string;
 }) {
   return (
     <section className={`page-hero${contenido ? " con-texto" : ""}`}>
+      <JsonLd data={schemaMigas(nombreSchema ? [...migas.slice(0, -1), { title: nombreSchema }] : migas)} />
       <Pieza p={{ s: 96, c: "#F2B035", w: 5.5, o: 0.28, r: 18, pos: { top: "18%", right: "6%" } }} />
       <Pieza p={{ s: 54, c: "#3F8557", w: 6, o: 0.45, r: -24, pos: { bottom: "14%", right: "18%" } }} />
       <div className="wrap">
@@ -80,7 +87,7 @@ export function NoticiaCard({ n }: { n: Noticia }) {
   return (
     <article className="noticia-card reveal">
       <div className="noticia-img">
-        <img src={n.imagen} alt={n.imagen_alt} />
+        <img {...optimizada(n.imagen, "(max-width: 900px) 92vw, 380px", 1080)} alt={n.imagen_alt} loading="lazy" decoding="async" />
       </div>
       <div className="noticia-body">
         <h3>{n.titulo}</h3>
@@ -132,7 +139,7 @@ export function ProximamenteBloque({ d }: { d: Proximamente }) {
               </SmartLink>
             ) : null}
           </div>
-          {d.imagen ? <img className="pronto-mascot" src={d.imagen} alt="" /> : null}
+          {d.imagen ? <img className="pronto-mascot" {...optimizada(d.imagen, "250px", 640)} alt="" loading="lazy" decoding="async" /> : null}
         </div>
       </div>
     </section>

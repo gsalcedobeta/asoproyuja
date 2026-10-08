@@ -6,6 +6,8 @@
    ===================================================================== */
 
 /* ---------- Utilidades ---------- */
+.skip-link{position:absolute;left:-9999px;top:12px;z-index:300;background:var(--brand-deep);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;font-size:0.9rem;}
+.skip-link:focus{left:16px;}
 .hp-field{position:absolute !important;left:-9999px !important;width:1px;height:1px;overflow:hidden;}
 .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
 .section-head.center .eyebrow{justify-content:center;}

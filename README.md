@@ -24,6 +24,8 @@ El sitio es **headless**: WordPress solo se usa para editar el contenido y Next.
 10. [Tareas frecuentes](#10-tareas-frecuentes)
 11. [Solución de problemas](#11-solución-de-problemas)
 12. [Pendientes de contenido](#12-pendientes-de-contenido)
+13. [SEO, rendimiento y analítica](#13-seo-rendimiento-y-analítica)
+14. [Lista para salir al aire](#14-lista-para-salir-al-aire)
 
 ---
 
@@ -152,6 +154,8 @@ Se configuran en Vercel → Settings → Environment Variables (y en `.env.local
 | `WP_URL` | No | URL de WordPress: `https://cms.asoproyuja.org`. Vacía = contenido local. |
 | `REVALIDATE_SECRET` | Con WordPress | Clave compartida con `ASOPROYUJA_REVALIDATE_SECRET` (wp-config.php). |
 | `FORM_SECRET` | Con WordPress | Clave compartida con `ASOPROYUJA_FORM_SECRET` (wp-config.php). La usan el formulario de contacto y el newsletter. |
+| `NEXT_PUBLIC_GTM_ID` | No | Contenedor de Google Tag Manager. Por defecto `GTM-K9H7CCQT`; `off` lo desactiva. |
+| `NEXT_PUBLIC_GA_ID` | No | Google Analytics 4. Por defecto `G-0ZYNYKJ7X6`; `off` lo desactiva (por ejemplo, si GA4 se configura dentro de GTM). |
 | `NEXT_DIST_DIR` | No | Solo para pruebas locales: carpeta de build alternativa (por defecto `.next`). |
 
 Para generar una clave larga: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`.
@@ -203,9 +207,10 @@ Redirecciones (`next.config.ts`): `/atencion-al-ciudadano` → `/contacto` (es l
 | Registra las plantillas de página "Asoproyuja: …", que activan cada grupo de campos | `includes/contenido.php` |
 | Crea la página de opciones **Ajustes del sitio** y el endpoint `GET /wp-json/asoproyuja/v1/ajustes` | `includes/contenido.php` |
 | Registra las ubicaciones de menú **Menú principal**, **Pie de página: Navegación** y **Pie de página: Enlaces**, y el endpoint `GET /wp-json/asoproyuja/v1/menus` | `includes/contenido.php` |
-| Redirige al sitio público a quien visite WordPress sin sesión iniciada | `includes/contenido.php` |
+| Redirige al sitio público a quien visite WordPress sin sesión iniciada: cada página o noticia a su dirección en el sitio y lo demás al inicio. `cms.asoproyuja.org` solo sirve para entrar a `/wp-admin` y para la API | `includes/contenido.php` |
 | Recibe el formulario de contacto en `POST /wp-json/asoproyuja/v1/mensajes` y el newsletter en `POST /wp-json/asoproyuja/v1/suscriptores` (cabecera `X-Asoproyuja-Secret`), guarda **Mensajes** y **Suscriptores** privados y envía el correo de aviso | `includes/formularios.php` |
 | Avisa a Vercel (`/api/revalidate`) al guardar; agrega el botón "↻ Actualizar sitio" en la barra del administrador | `includes/publicacion.php` |
+| Bloquea el CMS para el público: `noindex` en todo, `robots.txt` con `Disallow: /`, sin sitemap de WordPress, sin XML-RPC, lista de usuarios de la API solo con sesión iniciada, login sin pistas y fotos reducidas a 1920 px al subirlas | `includes/seguridad.php` |
 | Importador del contenido inicial desde `seed/contenido.json` | `includes/importador.php` |
 | Carga los grupos de campos desde `acf-json/` | `asoproyuja-headless.php` |
 
@@ -286,7 +291,7 @@ Sin `WP_URL` o `FORM_SECRET`, los formularios responden "aún no está habilitad
 - `public/assets/css/extra.css` contiene solo lo nuevo (encabezado de páginas interiores, logos de aliados, formularios, organigrama, acordeón, "Muy pronto", paginación) y usa exclusivamente las variables de `style.css` (`--brand`, `--brand-deep`, `--accent`, `--gold`, `--bg-alt`, `--border`…).
 - El Inicio genera el mismo HTML y las mismas clases que el preview aprobado. Las páginas interiores reutilizan esas clases (`.eyebrow`, `.section-head`, `.bien-grid`, `.quick-ico`, `.card-panel`, `.noticia-card`…).
 - Tipografías del sistema, como en el diseño: Century Gothic (títulos) y Segoe UI (texto). No se cargan fuentes externas.
-- Las imágenes se sirven con `<img>` normal (no `next/image`) para respetar el diseño original.
+- Las imágenes se sirven con `<img>` normal (no el componente `next/image`) para respetar el diseño original, pero pasan por el optimizador de Next.js: `lib/imagen.ts` genera `srcset` en AVIF/WebP al tamaño de cada pantalla (por ejemplo, la foto del slider baja de 292 KB a 22 KB en móvil).
 - El logo va en línea (`lib/logo.ts`) porque la hoja aprobada lo estiliza como `<svg>`; la copia en archivo está en `public/assets/img/logo.svg`.
 
 **Verificación visual:** el Inicio se comparó con capturas contra el preview (`entregables/asoproyuja-home-propuesta.html`) en escritorio (1440 px) y móvil (390 px), en cada diapositiva. Es idéntico al pixel salvo dos cambios aprobados: los logos reales de Aliados en lugar de los recuadros "Logo aliado", y el enlace "Política de datos" en la columna Enlaces del pie.
@@ -360,3 +365,56 @@ Para revisar qué entrega WordPress: `https://cms.asoproyuja.org/wp-json/wp/v2/p
 - **Nosotros:** los textos de quiénes somos, misión, visión, valores, áreas de intervención y organigrama salen del brochure enviado por el cliente (con el nombre actual, ASOPROYUJA).
 - **Política de datos:** es un texto base conforme a la Ley 1581 de 2012. Debe revisarlo la asociación (o su asesor legal) y completar un correo para el ejercicio de derechos cuando lo tengan.
 - **Newsletter:** el diseño aprobado no tiene casilla de autorización. Se recomienda ajustar la "Nota bajo el formulario" para mencionar la política de datos.
+
+---
+
+## 13. SEO, rendimiento y analítica
+
+### Metadatos (lo que muestra Google y las redes al compartir)
+
+- Cada página tiene en WordPress una pestaña **SEO (Google y redes)** con título (50–60 caracteres), descripción (140–160) e imagen para compartir (1200 × 630). Vacíos = los textos por defecto de `content/sitio.ts`.
+- Las noticias usan su título, el "Resumen de la tarjeta" y su foto destacada.
+- Se generan automáticamente: URL canónica, Open Graph y Twitter Card, idioma `es-CO`, `theme-color`, manifest e iconos (`app/icon.png`, `app/apple-icon.png`, `app/favicon.ico`). Imagen general para compartir: `public/assets/img/og-asoproyuja.jpg`.
+- Todo está en `lib/seo.ts`.
+
+### Datos estructurados (schema.org)
+
+- **NGO** (organización) y **WebSite** en todas las páginas: nombre, NIT, logo, dirección, teléfonos y redes (salen de Ajustes del sitio).
+- **BreadcrumbList** en cada página interior (Inicio › Noticias › …).
+- **NewsArticle** en cada noticia y **FAQPage** en Preguntas frecuentes cuando tenga preguntas.
+- Se pueden validar en https://search.google.com/test/rich-results.
+
+### Mapa del sitio e indexación
+
+- `asoproyuja.org/sitemap.xml`: páginas con prioridad, fecha de última modificación (de WordPress) e imágenes; cada noticia con su foto. Se actualiza solo.
+- **Preguntas frecuentes y Cómo ayudar** quedan con `noindex` y fuera del sitemap mientras estén en "Muy pronto"; al cargarles contenido se indexan solas.
+- `robots.txt` permite todo menos `/api/` y apunta al sitemap.
+- El dominio técnico `*.vercel.app` responde con `X-Robots-Tag: noindex`, y `cms.asoproyuja.org` también: en Google solo aparece `asoproyuja.org`.
+- Las imágenes de WordPress se sirven como `asoproyuja.org/wp-content/uploads/…` (proxy en `next.config.ts`).
+
+### Rendimiento
+
+- Páginas estáticas (ISR), imágenes optimizadas (AVIF/WebP + `srcset`), carga diferida de lo que está bajo el primer pantallazo y prioridad alta para la foto principal.
+- Caché del navegador: CSS 1 año (con `?v=` que cambia en cada despliegue), imágenes 30 días.
+- Cabeceras de seguridad: `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`.
+- Lighthouse en móvil (antes de salir al aire): rendimiento 93–98, SEO 100, buenas prácticas 100, accesibilidad 91–98. Las observaciones de accesibilidad que quedan son del diseño aprobado (contraste del enlace verde "Escríbenos" 4,46:1, tamaño de los puntos del slider y el orden h4/h5 de tarjetas y pie).
+
+### Google Tag Manager y Google Analytics 4
+
+- `components/Analytics.tsx` carga GTM (`GTM-K9H7CCQT`, con su `noscript`) y GA4 (`G-0ZYNYKJ7X6`) después de que la página es interactiva, sin frenar la carga.
+- **Solo miden en el dominio de `NEXT_PUBLIC_SITE_URL`** (con o sin `www`): no se cuentan las visitas de `localhost` ni de las versiones de prueba de Vercel.
+- **Importante:** GA4 ya está instalado directamente. **No cree en GTM una etiqueta de GA4 con el mismo ID** o se duplicarán las visitas. Si prefiere manejar GA4 desde GTM, ponga `NEXT_PUBLIC_GA_ID=off` en Vercel.
+- Eventos de conversión (llegan a GA4 y al `dataLayer` de GTM): `generate_lead` al enviar el formulario de contacto (con el asunto) y `sign_up` al suscribirse al newsletter. En GA4 → Administrar → Eventos se pueden marcar como **eventos clave**.
+
+---
+
+## 14. Lista para salir al aire
+
+1. **Vercel → Settings → Domains:** agregar `asoproyuja.org` y `www.asoproyuja.org` (que `www` redirija a `asoproyuja.org`). Configurar los DNS que indica Vercel.
+2. **Vercel → Environment Variables:** `NEXT_PUBLIC_SITE_URL=https://asoproyuja.org` → **Redeploy**.
+3. **wp-config.php:** `ASOPROYUJA_FRONT_URL` → `https://asoproyuja.org`.
+4. **WordPress:** subir la última versión del plugin (`wordpress/asoproyuja-headless.zip`). En SiteGround → Speed Optimizer, excluir `/wp-json/*` de la caché si los cambios tardan en verse.
+5. **SMTP** (Brevo): configurado y probado con un envío del formulario de contacto.
+6. **Search Console** (propiedad de dominio `asoproyuja.org`, ya verificada): Sitemaps → enviar `https://asoproyuja.org/sitemap.xml`. Luego, en Inspección de URLs, solicitar indexación del Inicio y de Quiénes somos.
+7. **GA4:** comprobar en Informes → Tiempo real que llegan las visitas; marcar `generate_lead` y `sign_up` como eventos clave. **GTM:** Vista previa (Tag Assistant) sobre `https://asoproyuja.org` y publicar el contenedor.
+8. Probar el formulario, el newsletter y un cambio desde WordPress en el dominio final.

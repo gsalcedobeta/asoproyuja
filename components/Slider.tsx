@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SmartLink } from "@/components/SmartLink";
+import { optimizada } from "@/lib/imagen";
 import type { Slide } from "@/lib/types";
 
 // Marco, giro y cintas de cada foto se repiten en ciclo, igual que en el diseño aprobado.
@@ -72,7 +73,12 @@ export function Slider({ slides }: { slides: Slide[] }) {
                   <div className={`hero-tape ${m.cintas[0]}`}></div>
                   <div className={`hero-tape ${m.cintas[1]}`}></div>
                   <div className="hero-photo-img">
-                    <img src={s.imagen} alt={s.imagen_alt} />
+                    <img
+                      {...optimizada(s.imagen, "(max-width: 900px) 290px, 500px", 1200)}
+                      alt={s.imagen_alt}
+                      decoding="async"
+                      {...(i === 0 ? { fetchPriority: "high" as const } : {})}
+                    />
                   </div>
                 </div>
               </div>
