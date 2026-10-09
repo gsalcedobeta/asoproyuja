@@ -3,5 +3,6 @@
 # Las rutas empiezan con "/" para no excluir por error public/assets.
 /wordpress/
 /README.md
+/README.en.md
 /entregables/
 /design-src/
